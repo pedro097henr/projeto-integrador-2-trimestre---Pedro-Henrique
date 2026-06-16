@@ -1,0 +1,110 @@
+/* Configurações Gerais e Reset de Margens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Estilização da Barra do Cabeçalho */
+.main-header {
+    background-color: #1a252f; /* Azul escuro profissional */
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Container para alinhar os elementos */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Responsividade: Alinha título e botões lado a lado em telas maiores (PC) */
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Estilo do Título Principal */
+.main-title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Menu de Navegação */
+.nav-menu {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Estilo Base dos Botões */
+.nav-btn {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Customização de Cores por Matéria (Efeito normal e Efeito Hover) */
+
+/* 1 - Programação (Azul) */
+.btn-prog {
+    background-color: #3498db;
+}
+.btn-prog:hover {
+    background-color: transparent;
+    border-color: #3498db;
+    color: #3498db;
+}
+
+/* 2 - Robótica (Laranja) */
+.btn-robo {
+    background-color: #e67e22;
+}
+.btn-robo:hover {
+    background-color: transparent;
+    border-color: #e67e22;
+    color: #e67e22;
+}
+
+/* 3 - Física e Técnico Ciência (Verde) */
+.btn-fisica {
+    background-color: #2ecc71;
+}
+.btn-fisica:hover {
+    background-color: transparent;
+    border-color: #2ecc71;
+    color: #2ecc71;
+}
+
+/* Placeholder apenas para espaçamento do corpo da página */
+.content-placeholder {
+    max-width: 1200px;
+    margin: 60px auto;
+    text-align: center;
+    font-size: 18px;
+    color: #7f8c8d;
+}
