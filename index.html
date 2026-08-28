@@ -1,16 +1,15 @@
- <!doctype html>
+<!doctype html>
 <html lang="pt-BR"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260828-05-5fe3063","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script><script src="/_sdk/50d846425a1e5082.telemetry_sdk.js" integrity="sha512-Otbex+ztlVbcEGql0rXGd/3E3ee/hqAntg6DeuUEMG6pIPbXGOSvZbFZVzknAXi1tH/itQ+ijEhOTr2aWj6CXg=="></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Como os olhos enxergam as cores?</title>
+  <title>Projeto Integrador - IFA</title>
   <script src="/_sdk/c6bcadf20ce5820f.editing_sdk.js" integrity="sha512-LVukVCTKnKSxy98w+wCVzDAxVXBG2vy32XblXlmJD9CPFnF2/FVc75CFngl41IdXcX3sVHJc9olw64zrPM/FIA=="></script>
   <style>
     :root {
       --bg: #061226;
-      --bg-deep: #020817;
-      --panel: rgba(13, 34, 67, .66);
-      --panel-strong: rgba(12, 31, 62, .9);
-      --line: rgba(150, 221, 255, .2);
+      --deep: #020817;
+      --panel: rgba(13, 34, 67, .72);
+      --line: rgba(150, 221, 255, .22);
       --text: #f5fbff;
       --muted: #b9cae4;
       --cyan: #37e7ff;
@@ -25,8 +24,8 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
       width: 100%;
+      margin: 0;
       overflow-x: hidden;
       background: var(--bg);
       color: var(--text);
@@ -37,8 +36,8 @@
       content: "";
       position: fixed;
       z-index: -2;
-      pointer-events: none;
       border-radius: 999px;
+      pointer-events: none;
       filter: blur(12px);
     }
     body::before {
@@ -51,7 +50,7 @@
     }
 
     .space-field {
-      position: fixed; inset: 0; z-index: -3; pointer-events: none; opacity: .58;
+      position: fixed; inset: 0; z-index: -3; opacity: .58; pointer-events: none;
       background-image:
         radial-gradient(circle at 18% 24%, #d4f8ff 0 1px, transparent 1.5px),
         radial-gradient(circle at 74% 10%, #fff 0 1px, transparent 1.6px),
@@ -71,19 +70,25 @@
 
     .shell { width: 100%; }
     .content { width: min(1140px, calc(100% - 40px)); margin: 0 auto; }
+    .glass {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
 
     .topbar {
-      position: sticky; top: 0; z-index: 20;
-      border-bottom: 1px solid rgba(174, 234, 255, .13);
-      background: rgba(2, 8, 23, .72);
+      position: sticky; top: 0; z-index: 30;
+      border-bottom: 1px solid rgba(174,234,255,.13);
+      background: rgba(2,8,23,.78);
       backdrop-filter: blur(18px);
     }
     .topbar-inner {
-      min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      min-height: 67px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
     }
     .brand {
-      display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
-      font-weight: 800; letter-spacing: .08em; font-size: .78rem; text-transform: uppercase;
+      display: inline-flex; align-items: center; flex: 0 0 auto; gap: 10px;
+      text-decoration: none; font-weight: 800; letter-spacing: .08em; font-size: .78rem; text-transform: uppercase;
     }
     .brand-mark {
       width: 29px; height: 29px; display: grid; place-items: center; border-radius: 50%;
@@ -91,109 +96,119 @@
         conic-gradient(from 40deg, var(--cyan), var(--violet), var(--magenta), var(--cyan));
       box-shadow: 0 0 18px rgba(55,231,255,.7);
     }
-    .brand-mark::after { content: ""; width: 9px; height: 9px; background: #061226; border-radius: 50%; }
-    .nav-links { display: flex; align-items: center; gap: 18px; }
-    .nav-links a { color: var(--muted); font-size: .85rem; text-decoration: none; transition: color .2s; }
+    .brand-mark::after { content: ""; width: 9px; height: 9px; background: var(--bg); border-radius: 50%; }
+    .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 15px; overflow-x: auto; padding: 7px 0; }
+    .nav-links a { flex: 0 0 auto; color: var(--muted); font-size: .78rem; text-decoration: none; transition: color .2s; }
     .nav-links a:hover { color: var(--cyan); }
 
     .hero {
-      position: relative; min-height: calc(88 * min(var(--vh, 1vh), 1vh));
+      min-height: calc(88 * min(var(--vh, 1vh), 1vh));
       display: grid; align-items: center; overflow: hidden; padding: 70px 0 52px;
     }
     .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 42px; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px; margin: 0 0 18px; color: var(--cyan);
-      font-weight: 800; font-size: .78rem; text-transform: uppercase; letter-spacing: .16em;
+    .eyebrow, .section-kicker {
+      color: var(--cyan); font-weight: 800; font-size: .76rem; text-transform: uppercase; letter-spacing: .15em;
     }
-    .pulse-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 0 rgba(55,231,255,.7); animation: pulse 2s infinite; }
+    .eyebrow { margin: 0 0 18px; }
+    .eyebrow::before {
+      content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 8px; border-radius: 50%;
+      background: var(--cyan); box-shadow: 0 0 0 0 rgba(55,231,255,.7); animation: pulse 2s infinite;
+    }
     h1, h2, h3, p { margin-top: 0; }
     h1 { max-width: 720px; margin-bottom: 20px; font-size: clamp(3rem, 7vw, 6.7rem); line-height: .94; letter-spacing: -.065em; }
-    .hero-copy { max-width: 600px; color: var(--muted); font-size: clamp(1rem, 2vw, 1.24rem); line-height: 1.7; }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.65rem); letter-spacing: -.045em; line-height: 1.02; margin-bottom: 15px; }
+    .hero-copy, .section-description { color: var(--muted); line-height: 1.68; }
+    .hero-copy { max-width: 600px; font-size: clamp(1rem, 2vw, 1.24rem); }
     .action-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 29px; }
-    .primary-button {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px;
-      padding: 0 21px; border: 1px solid transparent; border-radius: 999px; cursor: pointer;
-      text-decoration: none; font-weight: 800; transition: transform .2s, box-shadow .2s, filter .2s;
-      box-shadow: 0 10px 28px rgba(55,231,255,.18);
+
+    .primary-button, .secondary-button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 48px; padding: 0 20px; border-radius: 999px; cursor: pointer; text-decoration: none;
+      font-weight: 800; transition: transform .2s, box-shadow .2s, filter .2s, background .2s;
     }
-    .primary-button:hover { transform: translateY(-3px); filter: brightness(1.12); }
-    .arrow { font-size: 1.25rem; line-height: 1; }
+    .primary-button { border: 1px solid transparent; box-shadow: 0 10px 28px rgba(55,231,255,.18); }
+    .primary-button:hover, .secondary-button:hover { transform: translateY(-3px); filter: brightness(1.12); }
+    .secondary-button { border: 1px solid rgba(190,225,255,.25); }
 
     .hero-art { min-height: 400px; display: grid; place-items: center; position: relative; }
-    .orbit { position: absolute; width: 360px; height: 175px; border: 1px solid rgba(104, 225, 255,.32); border-radius: 50%; transform: rotate(-27deg); }
+    .orbit { position: absolute; width: 360px; height: 175px; border: 1px solid rgba(104,225,255,.32); border-radius: 50%; transform: rotate(-27deg); }
     .orbit.two { width: 420px; height: 220px; border-color: rgba(255,95,210,.2); transform: rotate(40deg); }
     .eye-scene { width: min(100%, 410px); aspect-ratio: 1.18; position: relative; display: grid; place-items: center; }
     .eye-shape {
       position: relative; width: 310px; height: 174px; overflow: hidden; border: 2px solid rgba(199,246,255,.8);
-      border-radius: 100% 10%; transform: rotate(45deg); background: radial-gradient(circle at 54% 48%, rgba(138,221,255,.38), rgba(21,65,122,.18) 35%, transparent 63%);
+      border-radius: 100% 10%; transform: rotate(45deg);
+      background: radial-gradient(circle at 54% 48%, rgba(138,221,255,.38), rgba(21,65,122,.18) 35%, transparent 63%);
       box-shadow: inset 0 0 35px rgba(55,231,255,.16), 0 0 52px rgba(55,231,255,.18);
     }
     .iris {
       position: absolute; top: 50%; left: 50%; width: 132px; height: 132px; border-radius: 50%;
       transform: translate(-50%,-50%) rotate(-45deg);
-      background: repeating-conic-gradient(from 0deg, #4de1fc 0 4deg, #218dc7 5deg 11deg, #7e6ce4 12deg 16deg);
+      background: repeating-conic-gradient(#4de1fc 0 4deg, #218dc7 5deg 11deg, #7e6ce4 12deg 16deg);
       border: 13px solid rgba(173,243,255,.47); box-shadow: 0 0 35px #40e2ff, inset 0 0 22px #0a1e55;
     }
-    .pupil { position: absolute; inset: 35px; border-radius: 50%; background: #02050e; box-shadow: inset 0 0 15px #000, 0 0 13px rgba(0,0,0,.8); }
-    .beam { position: absolute; left: -32px; height: 8px; width: 156px; border-radius: 10px; transform-origin: left center; filter: blur(.1px); opacity: .88; }
+    .pupil { position: absolute; inset: 35px; border-radius: 50%; background: #02050e; }
+    .beam { position: absolute; left: -32px; width: 156px; height: 8px; border-radius: 10px; opacity: .88; }
     .beam.one { top: 108px; transform: rotate(-18deg); background: linear-gradient(90deg, transparent, var(--cyan)); }
     .beam.two { top: 173px; transform: rotate(5deg); background: linear-gradient(90deg, transparent, var(--violet)); }
     .beam.three { top: 237px; transform: rotate(22deg); background: linear-gradient(90deg, transparent, var(--magenta)); }
     .spectral-strip {
-      position: absolute; bottom: 20px; right: 13px; width: 225px; height: 12px; border-radius: 99px;
+      position: absolute; right: 13px; bottom: 20px; width: 225px; height: 12px; border-radius: 99px;
       background: linear-gradient(90deg,#7742e6,#397df6,#37e7ff,#67ffbd,#f9ef71,#ff9f43,#ff4e85);
-      box-shadow: 0 0 28px rgba(120,220,255,.65); animation: shimmer 3.5s linear infinite;
-      background-size: 180% 100%;
+      box-shadow: 0 0 28px rgba(120,220,255,.65); animation: shimmer 3.5s linear infinite; background-size: 180% 100%;
     }
 
-    .section { position: relative; padding: 92px 0; }
-    .section-heading { max-width: 720px; margin-bottom: 35px; }
-    .section-kicker { color: var(--cyan); text-transform: uppercase; letter-spacing: .16em; font-weight: 800; font-size: .75rem; margin-bottom: 12px; }
-    h2 { font-size: clamp(2rem, 4.5vw, 3.65rem); letter-spacing: -.045em; line-height: 1.02; margin-bottom: 15px; }
-    .section-description { color: var(--muted); line-height: 1.68; font-size: 1.05rem; max-width: 710px; }
+    .section { position: relative; padding: 88px 0; scroll-margin-top: 70px; }
+    .section-heading { max-width: 760px; margin-bottom: 35px; }
+    .section-kicker { margin-bottom: 12px; }
+    .section-description { max-width: 730px; font-size: 1.05rem; }
 
-    .glass {
-      border: 1px solid var(--line); background: var(--panel); box-shadow: var(--shadow); backdrop-filter: blur(16px);
-    }
-    .concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-    .concept-card { min-height: 190px; padding: 23px; border-radius: 20px; transition: border-color .25s, transform .25s, background .25s; }
-    .concept-card:hover { transform: translateY(-5px); border-color: rgba(55,231,255,.55); background: rgba(20,52,93,.8); }
+    .concept-grid, .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .concept-card, .summary-card { padding: 23px; border-radius: 20px; }
+    .concept-card { min-height: 190px; transition: transform .25s, border-color .25s, background .25s; }
+    .concept-card:hover { transform: translateY(-5px); border-color: rgba(55,231,255,.55); background: rgba(20,52,93,.85); }
     .concept-icon {
-      display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 21px; border-radius: 13px;
+      width: 42px; height: 42px; display: grid; place-items: center; margin-bottom: 21px; border-radius: 13px;
       color: var(--cyan); background: rgba(55,231,255,.12); border: 1px solid rgba(55,231,255,.23); font-weight: 900;
     }
-    .concept-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
-    .concept-card p { color: var(--muted); font-size: .94rem; line-height: 1.55; margin-bottom: 0; }
+    .concept-card h3 { margin-bottom: 8px; font-size: 1.1rem; }
+    .concept-card p, .summary-card p { margin-bottom: 0; color: var(--muted); font-size: .94rem; line-height: 1.55; }
 
-    .journey-wrap { border-radius: 28px; padding: 26px; overflow: hidden; }
+    .journey-wrap { padding: 26px; overflow: hidden; border-radius: 28px; }
     .journey { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; position: relative; }
-    .journey::before { content: ""; position: absolute; top: 38px; left: 8%; right: 8%; height: 2px; background: linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); opacity: .55; }
+    .journey::before {
+      content: ""; position: absolute; top: 38px; left: 8%; right: 8%; height: 2px;
+      background: linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); opacity: .55;
+    }
     .journey-step { position: relative; z-index: 1; text-align: center; }
     .step-number {
-      width: 76px; height: 76px; margin: 0 auto 16px; display: grid; place-items: center; border-radius: 50%;
-      background: #0a2145; border: 1px solid rgba(130,221,255,.58); color: var(--cyan); font-weight: 900; font-size: 1.25rem;
+      width: 76px; height: 76px; display: grid; place-items: center; margin: 0 auto 16px; border-radius: 50%;
+      background: #0a2145; border: 1px solid rgba(130,221,255,.58); color: var(--cyan); font-size: 1.25rem; font-weight: 900;
       box-shadow: 0 0 0 8px rgba(6,18,38,.88), 0 0 24px rgba(55,231,255,.18);
     }
-    .journey-step h3 { font-size: .96rem; margin: 0 0 8px; }
+    .journey-step h3 { margin: 0 0 8px; font-size: .96rem; }
     .journey-step p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.5; }
 
-    .experiment { display: grid; grid-template-columns: .9fr 1.1fr; gap: 23px; align-items: stretch; }
-    .color-lab { padding: 28px; border-radius: 25px; }
-    .object-stage { min-height: 275px; display: grid; place-items: center; position: relative; overflow: hidden; border-radius: 19px; background: radial-gradient(circle at center, rgba(122, 220, 255, .13), transparent 58%), #061a37; }
-    .lab-rays { position: absolute; width: 140%; height: 70px; transform: rotate(-22deg); background: linear-gradient(90deg,transparent 5%,rgba(255,86,118,.72) 23%,rgba(255,214,87,.72) 36%,rgba(87,255,157,.72) 50%,rgba(55,231,255,.72) 65%,rgba(118,92,255,.72) 80%,transparent 95%); filter: blur(8px); opacity: .55; }
+    .experiment { display: grid; grid-template-columns: .9fr 1.1fr; gap: 23px; }
+    .color-lab, .color-controls { padding: 28px; border-radius: 25px; }
+    .object-stage {
+      min-height: 275px; display: grid; place-items: center; position: relative; overflow: hidden; border-radius: 19px;
+      background: radial-gradient(circle at center, rgba(122,220,255,.13), transparent 58%), #061a37;
+    }
+    .lab-rays {
+      position: absolute; width: 140%; height: 70px; transform: rotate(-22deg); opacity: .55; filter: blur(8px);
+      background: linear-gradient(90deg,transparent 5%,#ff5676 23%,#ffd657 36%,#57ff9d 50%,#37e7ff 65%,#765cff 80%,transparent 95%);
+    }
     .color-orb {
       position: relative; z-index: 1; width: 157px; height: 157px; border: 3px solid rgba(255,255,255,.62); border-radius: 50%;
-      background: #f25060; box-shadow: inset -25px -30px 35px rgba(0,0,0,.35), inset 15px 15px 24px rgba(255,255,255,.28), 0 0 44px rgba(242,80,96,.55);
       transition: background .45s, box-shadow .45s, transform .3s;
     }
     .color-orb::after { content: ""; position: absolute; top: 23px; left: 31px; width: 38px; height: 20px; border-radius: 50%; background: rgba(255,255,255,.52); transform: rotate(-28deg); }
-    .lab-caption { position: absolute; bottom: 18px; margin: 0; color: #d8efff; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; }
-    .color-controls { padding: 28px; border-radius: 25px; }
+    .lab-caption { position: absolute; bottom: 18px; margin: 0; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; }
     .color-controls h3 { margin-bottom: 7px; font-size: 1.4rem; }
     .color-controls > p { color: var(--muted); margin-bottom: 19px; line-height: 1.55; }
     .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
     .swatch {
-      min-height: 54px; border: 1px solid rgba(255,255,255,.18); border-radius: 13px; cursor: pointer; color: white;
+      min-height: 54px; cursor: pointer; color: #fff; border: 1px solid rgba(255,255,255,.18); border-radius: 13px;
       background: rgba(255,255,255,.06); font-weight: 800; transition: transform .2s, border-color .2s, box-shadow .2s;
     }
     .swatch:hover, .swatch.active { transform: translateY(-3px); border-color: var(--cyan); box-shadow: 0 0 20px rgba(55,231,255,.25); }
@@ -201,99 +216,678 @@
     .swatch[data-color="verde"] { box-shadow: inset 0 -5px #48df8b; }
     .swatch[data-color="azul"] { box-shadow: inset 0 -5px #4e9cff; }
     .swatch[data-color="branco"] { box-shadow: inset 0 -5px #fff; }
-    .spectrum-labels { display: flex; justify-content: space-between; gap: 8px; color: #d4e6ff; font-size: .76rem; margin-bottom: 8px; }
-    .spectrum-track { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .spectrum-labels { display: flex; justify-content: space-between; color: #d4e6ff; font-size: .76rem; }
+    .spectrum-track { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 8px; }
     .band { height: 27px; border-radius: 7px; opacity: .23; transition: opacity .35s, transform .35s, box-shadow .35s; }
     .band.reflect { opacity: 1; transform: translateY(-2px); box-shadow: 0 0 16px currentColor; }
-    .band-violet { background: #8859ed; color: #8859ed; } .band-blue { background: #3b93f7; color: #3b93f7; }
-    .band-cyan { background: #36e7ff; color: #36e7ff; } .band-green { background: #5cfa96; color: #5cfa96; }
-    .band-yellow { background: #f8e763; color: #f8e763; } .band-orange { background: #ff9b49; color: #ff9b49; }
-    .band-red { background: #ff596c; color: #ff596c; }
+    .band-violet { background:#8859ed; color:#8859ed; } .band-blue { background:#3b93f7; color:#3b93f7; }
+    .band-cyan { background:#36e7ff; color:#36e7ff; } .band-green { background:#5cfa96; color:#5cfa96; }
+    .band-yellow { background:#f8e763; color:#f8e763; } .band-orange { background:#ff9b49; color:#ff9b49; }
+    .band-red { background:#ff596c; color:#ff596c; }
     .readout { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin-top: 22px; }
-    .readout div { padding: 13px; border-left: 3px solid var(--cyan); background: rgba(255,255,255,.045); border-radius: 0 10px 10px 0; }
-    .readout strong { display: block; color: var(--cyan); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 5px; }
-    .readout span { color: var(--text); font-size: .92rem; }
+    .readout div { padding: 13px; border-left: 3px solid var(--cyan); border-radius: 0 10px 10px 0; background: rgba(255,255,255,.045); }
+    .readout strong { display:block; margin-bottom:5px; color:var(--cyan); font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; }
     .dynamic-explanation { margin: 17px 0 0; color: var(--muted); line-height: 1.56; }
 
-    .quiz-shell { border-radius: 28px; padding: 29px; }
-    .quiz-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 25px; }
-    .quiz-top h2 { margin-bottom: 8px; }
-    .quiz-top p { color: var(--muted); margin: 0; }
-    .score-box { min-width: 126px; padding: 14px; border-radius: 15px; text-align: center; background: rgba(55,231,255,.1); border: 1px solid rgba(55,231,255,.25); }
-    .score-box small { display: block; color: var(--muted); margin-bottom: 3px; }
-    .score-box strong { font-size: 1.65rem; color: var(--cyan); }
-    .progress-row { display: flex; align-items: center; justify-content: space-between; gap: 15px; color: var(--muted); font-size: .88rem; margin-bottom: 10px; }
-    .progress-track { height: 8px; overflow: hidden; border-radius: 99px; background: rgba(255,255,255,.1); margin-bottom: 28px; }
-    .progress-bar { height: 100%; width: 20%; border-radius: inherit; background: linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); transition: width .35s; }
-    .question-card { padding: 26px; border-radius: 20px; background: rgba(2,13,33,.53); border: 1px solid rgba(174,234,255,.14); }
-    .question-card h3 { font-size: clamp(1.2rem, 2.4vw, 1.65rem); line-height: 1.28; margin-bottom: 21px; }
-    .answers { display: grid; gap: 10px; }
+    .newton-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 23px; align-items: stretch; }
+    .newton-visual, .newton-copy, .code-card { padding: 26px; border-radius: 25px; }
+    .newton-machine {
+      min-height: 350px; display: grid; place-items: center; overflow: hidden; position: relative; border-radius: 19px;
+      background: radial-gradient(circle at 47% 45%, rgba(55,231,255,.12), transparent 38%), #061a37;
+    }
+    .machine-grid {
+      position: absolute; inset: 0; opacity: .28;
+      background-image: linear-gradient(rgba(55,231,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(55,231,255,.16) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .wheel-wrap { position: relative; z-index: 1; width: min(260px, 70vw); aspect-ratio: 1; }
+    .newton-wheel {
+      width: 100%; height: 100%; border: 10px solid rgba(230,250,255,.75); border-radius: 50%;
+      background: conic-gradient(#ff4f6f 0deg 51deg,#ff9d45 51deg 102deg,#f8e763 102deg 153deg,#5cfa96 153deg 204deg,#36e7ff 204deg 255deg,#3b93f7 255deg 306deg,#8859ed 306deg 360deg);
+      box-shadow: 0 0 42px rgba(55,231,255,.26), inset 0 0 20px rgba(0,0,0,.35);
+      transition: filter .5s, transform .5s;
+    }
+    .newton-wheel::before {
+      content: ""; position: absolute; inset: 36%; border-radius: 50%; background: #071a36; border: 7px solid #a8ebff;
+      box-shadow: 0 0 18px rgba(55,231,255,.7);
+    }
+    .newton-wheel.spinning { animation: wheel-spin .33s linear infinite; filter: saturate(.25) brightness(1.7) blur(.45px); }
+    .axle { position: absolute; z-index: 2; left: 48%; top: 50%; width: 48%; height: 10px; transform: translateY(-50%); background: linear-gradient(90deg,#a8ebff,#748bb3); }
+    .motor {
+      position: absolute; z-index: 3; right: -18%; top: calc(50% - 44px); width: 74px; height: 88px; border-radius: 12px;
+      background: linear-gradient(135deg,#334f78,#142b4d); border: 2px solid #a8ebff; box-shadow: 0 0 23px rgba(55,231,255,.28);
+    }
+    .motor::before { content: "MOTOR DC"; position:absolute; inset: 27px 0 auto; text-align:center; font-size: .58rem; letter-spacing:.06em; color:#d8f8ff; font-weight:800; }
+    .motor::after { content: ""; position:absolute; right:-14px; top:35px; width:14px; height:17px; background:#8fa4bf; border-radius:0 4px 4px 0; }
+    .newton-note { position: absolute; left: 18px; bottom: 16px; color: #d8efff; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
+    .newton-copy p { color: var(--muted); line-height: 1.65; }
+    .flow-chart { display: grid; gap: 9px; margin: 24px 0; }
+    .flow-step {
+      display: grid; grid-template-columns: 34px 1fr; align-items: center; gap: 12px; padding: 10px 12px;
+      border: 1px solid rgba(150,221,255,.18); border-radius: 12px; background: rgba(255,255,255,.04);
+    }
+    .flow-step span { width: 26px; height: 26px; display:grid; place-items:center; border-radius:50%; color:var(--bg); background:var(--cyan); font-weight:900; font-size:.75rem; }
+    .flow-step strong { font-size: .9rem; }
+    .component-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
+    .component { padding: 14px; border-radius: 14px; border: 1px solid rgba(150,221,255,.18); background: rgba(255,255,255,.04); transition: transform .2s, border-color .2s; }
+    .component:hover { transform: translateY(-3px); border-color: var(--cyan); }
+    .component-symbol { display:block; margin-bottom:8px; color:var(--cyan); font-size:1.35rem; }
+    .component p { margin: 0; color: var(--text); font-size: .84rem; font-weight: 700; }
+
+    .tech-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .tech-card { padding: 26px; border-radius: 23px; position: relative; overflow: hidden; }
+    .tech-card::after { content:""; position:absolute; width:160px; height:160px; right:-75px; bottom:-80px; border-radius:50%; background:rgba(55,231,255,.08); }
+    .tech-badge { display:inline-flex; margin-bottom:17px; padding:7px 10px; border-radius:999px; color:var(--bg); background:var(--cyan); font-size:.72rem; font-weight:900; letter-spacing:.08em; }
+    .css-badge { background: var(--magenta); }
+    .tech-card h3 { font-size: 1.45rem; margin-bottom: 9px; }
+    .tech-card > p { color:var(--muted); line-height:1.58; }
+    .code-sample { margin: 19px 0 0; padding: 15px; border:1px solid rgba(150,221,255,.18); border-radius:14px; background:#020b1b; color:#c8f7ff; font-family: "Courier New", monospace; font-size:.78rem; line-height:1.7; white-space:pre-wrap; }
+    .code-tag { color:#ff9fdb; } .code-value { color:#6dffb1; } .code-key { color:#ffd166; }
+    .project-tech-note { margin-top:18px; padding:23px; border-left:4px solid var(--magenta); border-radius:0 18px 18px 0; background:linear-gradient(100deg,rgba(156,124,255,.14),rgba(255,95,210,.09)); }
+    .project-tech-note p { margin:0; color:var(--text); line-height:1.55; font-weight:700; }
+
+    .quiz-shell { padding: 29px; border-radius: 28px; }
+    .quiz-top { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; margin-bottom:25px; }
+    .quiz-top p { color:var(--muted); margin:0; }
+    .score-box { min-width:126px; padding:14px; border-radius:15px; text-align:center; background:rgba(55,231,255,.1); border:1px solid rgba(55,231,255,.25); }
+    .score-box small { display:block; color:var(--muted); margin-bottom:3px; }
+    .score-box strong { font-size:1.65rem; color:var(--cyan); }
+    .progress-row { display:flex; justify-content:space-between; gap:15px; margin-bottom:10px; color:var(--muted); font-size:.88rem; }
+    .progress-track { height:8px; overflow:hidden; border-radius:99px; background:rgba(255,255,255,.1); margin-bottom:28px; }
+    .progress-bar { height:100%; width:14%; border-radius:inherit; background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); transition:width .35s; }
+    .question-card { padding:26px; border-radius:20px; background:rgba(2,13,33,.53); border:1px solid rgba(174,234,255,.14); }
+    .question-card h3 { font-size:clamp(1.2rem,2.4vw,1.65rem); line-height:1.28; margin-bottom:21px; }
+    .answers { display:grid; gap:10px; }
     .answer {
-      width: 100%; display: flex; align-items: center; text-align: left; gap: 13px; padding: 14px; cursor: pointer; color: var(--text);
-      border: 1px solid rgba(190,225,255,.2); border-radius: 13px; background: rgba(255,255,255,.04); transition: border-color .2s, transform .2s, background .2s;
+      width:100%; display:flex; align-items:center; gap:13px; padding:14px; cursor:pointer; color:var(--text); text-align:left;
+      border:1px solid rgba(190,225,255,.2); border-radius:13px; background:rgba(255,255,255,.04); transition:border-color .2s,transform .2s,background .2s;
     }
-    .answer:hover:not(:disabled) { border-color: var(--cyan); transform: translateX(4px); background: rgba(55,231,255,.08); }
-    .answer:disabled { cursor: default; }
-    .answer-letter { flex: 0 0 29px; height: 29px; display: grid; place-items: center; border-radius: 50%; color: var(--cyan); border: 1px solid rgba(55,231,255,.4); font-weight: 900; font-size: .82rem; }
-    .answer.correct { border-color: var(--green); background: rgba(109,255,177,.12); }
-    .answer.correct .answer-letter { border-color: var(--green); color: var(--green); }
-    .answer.incorrect { border-color: var(--danger); background: rgba(255,123,139,.11); }
-    .answer.incorrect .answer-letter { border-color: var(--danger); color: var(--danger); }
-    .feedback { min-height: 24px; margin: 19px 0 0; padding: 0; color: var(--muted); line-height: 1.5; }
-    .feedback.show { padding: 13px 15px; border-radius: 11px; background: rgba(255,255,255,.05); }
-    .quiz-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
-    .secondary-button {
-      min-height: 45px; padding: 0 16px; cursor: pointer; color: var(--text); border: 1px solid rgba(190,225,255,.25); border-radius: 999px; background: rgba(255,255,255,.05);
-      transition: background .2s, transform .2s;
+    .answer:hover:not(:disabled) { border-color:var(--cyan); transform:translateX(4px); background:rgba(55,231,255,.08); }
+    .answer:disabled { cursor:default; }
+    .answer-letter { flex:0 0 29px; height:29px; display:grid; place-items:center; border-radius:50%; color:var(--cyan); border:1px solid rgba(55,231,255,.4); font-weight:900; font-size:.82rem; }
+    .answer.correct { border-color:var(--green); background:rgba(109,255,177,.12); }
+    .answer.correct .answer-letter { border-color:var(--green); color:var(--green); }
+    .answer.incorrect { border-color:var(--danger); background:rgba(255,123,139,.11); }
+    .answer.incorrect .answer-letter { border-color:var(--danger); color:var(--danger); }
+    .feedback { min-height:24px; margin:19px 0 0; color:var(--muted); line-height:1.5; }
+    .feedback.show { padding:13px 15px; border-radius:11px; background:rgba(255,255,255,.05); }
+    .quiz-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:18px; }
+    .hidden { display:none !important; }
+    .final-result { text-align:center; padding:20px 0 4px; }
+    .result-orbit { width:105px; height:105px; display:grid; place-items:center; margin:0 auto 20px; border-radius:50%; border:2px solid var(--cyan); background:radial-gradient(circle,rgba(55,231,255,.3),rgba(156,124,255,.08)); box-shadow:0 0 37px rgba(55,231,255,.2); font-size:2.6rem; }
+    .final-result p { color:var(--muted); line-height:1.6; }
+
+    .summary-index { color:var(--magenta); font-weight:900; letter-spacing:.12em; font-size:.76rem; }
+    .summary-card h3 { margin:12px 0 0; line-height:1.42; font-size:1.07rem; }
+    .closing-callout { margin-top:19px; padding:27px; border-left:4px solid var(--cyan); border-radius:0 18px 18px 0; }
+    .closing-callout p { max-width:890px; margin:0; font-size:clamp(1.18rem,2.5vw,1.75rem); line-height:1.35; font-weight:800; }
+    footer { padding:32px 0 39px; color:#9fb4d2; text-align:center; font-size:.83rem; letter-spacing:.12em; text-transform:uppercase; }
+
+    .reveal { animation:reveal .75s both; }
+    .delay-1 { animation-delay:.12s; } .delay-2 { animation-delay:.24s; }
+    @keyframes pulse { 70% { box-shadow:0 0 0 11px rgba(55,231,255,0); } 100% { box-shadow:0 0 0 0 rgba(55,231,255,0); } }
+    @keyframes shimmer { to { background-position:180% 0; } }
+    @keyframes reveal { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes wheel-spin { to { transform:rotate(360deg); } }
+
+    @media (max-width: 980px) {
+      .topbar-inner { align-items:flex-start; padding:12px 0; }
+      .nav-links { max-width:64%; }
+      .hero { min-height:auto; padding:65px 0 42px; }
+      .hero-grid, .experiment, .newton-layout { grid-template-columns:1fr; }
+      .hero-art { min-height:310px; order:-1; }
+      .eye-scene { transform:scale(.82); }
+      .concept-grid { grid-template-columns:repeat(2,1fr); }
+      .journey { grid-template-columns:repeat(3,1fr); row-gap:29px; }
+      .journey::before { display:none; }
     }
-    .secondary-button:hover { transform: translateY(-2px); background: rgba(255,255,255,.11); }
-    .hidden { display: none !important; }
-    .final-result { text-align: center; padding: 20px 0 4px; }
-    .result-orbit { width: 105px; height: 105px; display: grid; place-items: center; margin: 0 auto 20px; border-radius: 50%; border: 2px solid var(--cyan); background: radial-gradient(circle, rgba(55,231,255,.3), rgba(156,124,255,.08)); box-shadow: 0 0 37px rgba(55,231,255,.2); font-size: 2.6rem; }
-    .final-result p { color: var(--muted); line-height: 1.6; }
-
-    .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-    .summary-card { padding: 23px; border-radius: 18px; }
-    .summary-index { color: var(--magenta); font-weight: 900; letter-spacing: .12em; font-size: .76rem; }
-    .summary-card h3 { margin: 12px 0 0; line-height: 1.42; font-size: 1.07rem; }
-    .closing-callout { margin-top: 19px; padding: 27px; border-left: 4px solid var(--cyan); border-radius: 0 18px 18px 0; background: linear-gradient(100deg,rgba(55,231,255,.14),rgba(156,124,255,.11),rgba(255,95,210,.1)); }
-    .closing-callout p { max-width: 890px; margin: 0; font-size: clamp(1.18rem, 2.5vw, 1.75rem); line-height: 1.35; font-weight: 800; }
-
-    footer { padding: 32px 0 39px; color: #9fb4d2; font-size: .83rem; text-align: center; letter-spacing: .12em; text-transform: uppercase; }
-    .reveal { animation: reveal .75s both; }
-    .delay-1 { animation-delay: .12s; } .delay-2 { animation-delay: .24s; }
-
-    @keyframes pulse { 70% { box-shadow: 0 0 0 11px rgba(55,231,255,0); } 100% { box-shadow: 0 0 0 0 rgba(55,231,255,0); } }
-    @keyframes shimmer { to { background-position: 180% 0; } }
-    @keyframes reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-
-    @media (max-width: 860px) {
-      .nav-links { display: none; }
-      .hero { min-height: auto; padding: 65px 0 42px; }
-      .hero-grid, .experiment { grid-template-columns: 1fr; }
-      .hero-art { min-height: 310px; order: -1; }
-      .eye-scene { transform: scale(.82); }
-      .concept-grid { grid-template-columns: repeat(2, 1fr); }
-      .journey { grid-template-columns: repeat(3, 1fr); row-gap: 29px; }
-      .journey::before { display: none; }
-      .summary-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 560px) {
-      .content { width: min(100% - 28px, 1140px); }
-      .section { padding: 65px 0; }
-      h1 { font-size: clamp(2.8rem, 16vw, 4.8rem); }
-      .concept-grid, .journey { grid-template-columns: 1fr; }
-      .journey-step { display: grid; grid-template-columns: 64px 1fr; text-align: left; column-gap: 16px; align-items: start; }
-      .step-number { width: 54px; height: 54px; margin: 0; grid-row: span 2; }
-      .journey-step h3 { padding-top: 2px; }
-      .quiz-top { flex-direction: column; }
-      .score-box { width: 100%; text-align: left; }
-      .readout { grid-template-columns: 1fr; }
-      .swatches { grid-template-columns: repeat(2, 1fr); }
-      .quiz-shell, .color-lab, .color-controls, .journey-wrap { padding: 18px; }
+    @media (max-width: 620px) {
+      .content { width:min(100% - 28px,1140px); }
+      .topbar-inner { gap:10px; }
+      .brand { max-width:160px; font-size:.68rem; }
+      .nav-links { max-width:calc(100% - 170px); gap:12px; }
+      .section { padding:65px 0; }
+      h1 { font-size:clamp(2.8rem,16vw,4.8rem); }
+      .concept-grid, .summary-grid, .tech-grid, .journey { grid-template-columns:1fr; }
+      .journey-step { display:grid; grid-template-columns:64px 1fr; text-align:left; column-gap:16px; align-items:start; }
+      .step-number { width:54px; height:54px; margin:0; grid-row:span 2; }
+      .journey-step h3 { padding-top:2px; }
+      .quiz-top { flex-direction:column; }
+      .score-box { width:100%; text-align:left; }
+      .readout, .component-grid { grid-template-columns:1fr; }
+      .swatches { grid-template-columns:repeat(2,1fr); }
+      .quiz-shell, .color-lab, .color-controls, .journey-wrap, .newton-visual, .newton-copy, .tech-card { padding:18px; }
+      .newton-machine { min-height:300px; }
+      .wheel-wrap { width:210px; }
     }
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
     }
-  <
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/b3bf9e8ac58e6ad6.data_sdk.js" type="text/javascript" integrity="sha512-otc1u9NYq9Ms5Jt//7vmhrrqR5CLPr8Jdgs6741gqniClfLMcfmC+jK/cKuQdhLv6G0esJ/FzaMS9tv0T/vj/Q=="></script>
+  <script src="/_sdk/a6de989e8af05ea5.resizing_sdk.js" type="text/javascript" integrity="sha512-cceAQMIleYr/3eg7o5WzN46w0HpgI1sxi+5kDUb7CmTjHEpgBtINDxtOpnNeUtujjui8NG0OSDgUMl0/E2lT2A=="></script>
+ </head>
+ <body data-template-id="__page-root" style="background: rgb(6, 18, 38);">
+  <div class="space-field" aria-hidden="true"></div>
+  <div class="shell">
+   <header class="topbar">
+    <div class="content topbar-inner"><a href="#inicio" class="brand" aria-label="Voltar ao início"> <span class="brand-mark" aria-hidden="true"></span> <span data-template-id="brand-text" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.08rem;">Projeto Integrador - IFA</span> </a>
+     <nav class="nav-links" aria-label="Navegação principal"><a data-template-id="nav-intro" class="canva-link" href="#fundamentos" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 16px;">Fundamentos</a> <a data-template-id="nav-path" class="canva-link" href="#caminho" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 16px;">Caminho da luz</a> <a data-template-id="nav-lab" class="canva-link" href="#laboratorio" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 16px;">Laboratório</a> <a data-template-id="nav-newton" class="canva-link" href="#roda-newton" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 16px;">Roda de Newton</a> <a data-template-id="nav-tech" class="canva-link" href="#tecnologia" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 16px;">HTML e CSS</a> <a data-template-id="nav-quiz" class="canva-link" href="#desafio" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 16px;">Desafio</a>
+     </nav>
+    </div>
+   </header>
+   <main>
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+     <div class="content hero-grid">
+      <div>
+       <p data-template-id="hero-kicker" class="canva-text eyebrow reveal" style="color: rgb(55, 231, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.12rem;">Física • Robótica • Tecnologia</p>
+       <h1 data-template-id="hero-title" class="canva-text reveal delay-1" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 32px; letter-spacing: -0.06rem; line-height: 0.95;">Projeto Integrador - IFA</h1>
+       <p data-template-id="hero-subtitle" class="canva-text hero-copy reveal delay-2" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 19px; line-height: 1.65;">Uma experiência interativa para compreender como enxergamos as cores, explorar a Roda de Newton e descobrir a tecnologia usada para apresentar a Física de forma visual.</p>
+       <div class="action-row reveal delay-2"><a data-template-id="explore-button" class="canva-button primary-button" href="#fundamentos" style="background: rgb(55, 231, 255); color: rgb(6, 18, 38); font-weight: 800; font-style: normal; font-size: 16px;">Explorar o projeto ↓</a>
+       </div>
+      </div>
+      <div class="hero-art reveal delay-1" aria-label="Representação de um olho recebendo feixes de luz coloridos">
+       <div class="orbit" aria-hidden="true"></div>
+       <div class="orbit two" aria-hidden="true"></div>
+       <div class="eye-scene"><span class="beam one" aria-hidden="true"></span> <span class="beam two" aria-hidden="true"></span> <span class="beam three" aria-hidden="true"></span>
+        <div class="eye-shape" aria-hidden="true">
+         <div class="iris">
+          <div class="pupil"></div>
+         </div>
+        </div>
+        <div class="spectral-strip" aria-hidden="true"></div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="fundamentos" class="section" aria-labelledby="fundamentos-title">
+     <div class="content">
+      <div class="section-heading">
+       <p data-template-id="fundamentos-kicker" class="canva-text section-kicker" style="color: rgb(55, 231, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.14rem;">Base científica</p>
+       <h2 data-template-id="fundamentos-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 24px; letter-spacing: -0.04rem;">Física e tecnociência</h2>
+       <p data-template-id="fundamentos-description" class="canva-text section-description" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 17px; line-height: 1.65;">Enxergar cores é um processo físico e biológico: a luz interage com a matéria, entra no olho e é transformada em sinais que o cérebro interpreta.</p>
+      </div>
+      <div class="concept-grid">
+       <article data-template-id="concept-light" class="canva-card concept-card glass" style="background: rgba(13, 34, 67, 0.66);">
+        <div class="concept-icon" aria-hidden="true">
+         ☀
+        </div>
+        <h3 data-template-id="concept-light-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Luz branca</h3>
+        <p data-template-id="concept-light-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.55;">É uma mistura de várias faixas de luz visível, que podem ser separadas por um prisma.</p>
+       </article>
+       <article data-template-id="concept-spectrum" class="canva-card concept-card glass" style="background: rgba(13, 34, 67, 0.66);">
+        <div class="concept-icon" aria-hidden="true">
+         ≈
+        </div>
+        <h3 data-template-id="concept-spectrum-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Espectro visível</h3>
+        <p data-template-id="concept-spectrum-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.55;">É a pequena faixa de radiação que nossos olhos conseguem perceber como cores.</p>
+       </article>
+       <article data-template-id="concept-wave" class="canva-card concept-card glass" style="background: rgba(13, 34, 67, 0.66);">
+        <div class="concept-icon" aria-hidden="true">
+         λ
+        </div>
+        <h3 data-template-id="concept-wave-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Comprimento de onda</h3>
+        <p data-template-id="concept-wave-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.55;">Cada faixa luminosa possui um comprimento de onda associado a diferentes cores.</p>
+       </article>
+       <article data-template-id="concept-object" class="canva-card concept-card glass" style="background: rgba(13, 34, 67, 0.66);">
+        <div class="concept-icon" aria-hidden="true">
+         ◐
+        </div>
+        <h3 data-template-id="concept-object-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Reflexão e absorção</h3>
+        <p data-template-id="concept-object-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.55;">O material absorve algumas frequências e reflete outras para nossos olhos.</p>
+       </article>
+       <article data-template-id="concept-retina" class="canva-card concept-card glass" style="background: rgba(13, 34, 67, 0.66);">
+        <div class="concept-icon" aria-hidden="true">
+         ◉
+        </div>
+        <h3 data-template-id="concept-retina-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Retina e cones</h3>
+        <p data-template-id="concept-retina-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.55;">Na retina, os cones respondem de maneiras diferentes às faixas de luz recebidas.</p>
+       </article>
+       <article data-template-id="concept-brain" class="canva-card concept-card glass" style="background: rgba(13, 34, 67, 0.66);">
+        <div class="concept-icon" aria-hidden="true">
+         ✦
+        </div>
+        <h3 data-template-id="concept-brain-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Cérebro</h3>
+        <p data-template-id="concept-brain-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.55;">Ele combina os sinais da retina e produz a experiência que chamamos de cor.</p>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section id="caminho" class="section" aria-labelledby="caminho-title">
+     <div class="content">
+      <div class="section-heading">
+       <p data-template-id="caminho-kicker" class="canva-text section-kicker" style="color: rgb(55, 231, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.14rem;">Sequência de percepção</p>
+       <h2 data-template-id="caminho-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 24px; letter-spacing: -0.04rem;">O caminho da luz até a percepção</h2>
+       <p data-template-id="caminho-description" class="canva-text section-description" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 17px; line-height: 1.65;">A cor não aparece em um único ponto: ela é construída em uma cadeia de eventos rápidos e conectados.</p>
+      </div>
+      <div data-template-id="journey-panel" class="canva-panel journey-wrap glass" style="background: rgba(13, 34, 67, 0.66);">
+       <div class="journey">
+        <article class="journey-step">
+         <div class="step-number">
+          1
+         </div>
+         <h3 data-template-id="step-1-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Fonte de luz</h3>
+         <p data-template-id="step-1-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 13px;">A luz ilumina o objeto.</p>
+        </article>
+        <article class="journey-step">
+         <div class="step-number">
+          2
+         </div>
+         <h3 data-template-id="step-2-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Absorção</h3>
+         <p data-template-id="step-2-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 13px;">O objeto absorve algumas frequências.</p>
+        </article>
+        <article class="journey-step">
+         <div class="step-number">
+          3
+         </div>
+         <h3 data-template-id="step-3-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Reflexão</h3>
+         <p data-template-id="step-3-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 13px;">Outras faixas são refletidas.</p>
+        </article>
+        <article class="journey-step">
+         <div class="step-number">
+          4
+         </div>
+         <h3 data-template-id="step-4-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Pupila</h3>
+         <p data-template-id="step-4-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 13px;">A luz entra no olho.</p>
+        </article>
+        <article class="journey-step">
+         <div class="step-number">
+          5
+         </div>
+         <h3 data-template-id="step-5-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Cones</h3>
+         <p data-template-id="step-5-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 13px;">A retina converte luz em sinais.</p>
+        </article>
+        <article class="journey-step">
+         <div class="step-number">
+          6
+         </div>
+         <h3 data-template-id="step-6-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 19px;">Cérebro</h3>
+         <p data-template-id="step-6-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 13px;">Os sinais viram percepção de cor.</p>
+        </article>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="laboratorio" class="section" aria-labelledby="lab-title">
+     <div class="content">
+      <div class="section-heading">
+       <p data-template-id="lab-kicker" class="canva-text section-kicker" style="color: rgb(55, 231, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.14rem;">Mini laboratório</p>
+       <h2 data-template-id="lab-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 24px; letter-spacing: -0.04rem;">Por que este objeto parece colorido?</h2>
+       <p data-template-id="lab-description" class="canva-text section-description" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 17px; line-height: 1.65;">Escolha uma cor para observar quais partes do espectro são mais refletidas pelo objeto.</p>
+      </div>
+      <div class="experiment">
+       <div data-template-id="color-stage-card" class="canva-card color-lab glass" style="background: rgba(13, 34, 67, 0.66);">
+        <div class="object-stage">
+         <div class="lab-rays" aria-hidden="true"></div>
+         <div id="color-orb" class="color-orb" aria-label="Objeto vermelho"></div>
+         <p data-template-id="stage-caption" class="canva-text lab-caption" style="color: rgb(216, 239, 255); font-weight: 700; font-style: normal; font-size: 16px; letter-spacing: 0.06rem;">Objeto sob luz branca</p>
+        </div>
+       </div>
+       <div data-template-id="color-controls-card" class="canva-panel color-controls glass" style="background: rgba(13, 34, 67, 0.66);">
+        <h3 data-template-id="color-controls-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 22px;">Selecione uma superfície</h3>
+        <p data-template-id="color-controls-description" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.55;">A faixa mais luminosa representa a luz que chega com mais força até os olhos.</p>
+        <div class="swatches" role="group" aria-label="Selecione uma cor do objeto"><button type="button" class="swatch active" data-color="vermelho" aria-pressed="true">Vermelho</button> <button type="button" class="swatch" data-color="verde" aria-pressed="false">Verde</button> <button type="button" class="swatch" data-color="azul" aria-pressed="false">Azul</button> <button type="button" class="swatch" data-color="branco" aria-pressed="false">Branco</button>
+        </div>
+        <div class="spectrum-labels" aria-hidden="true">
+         <span>violeta</span><span>vermelho</span>
+        </div>
+        <div id="spectrum-track" class="spectrum-track" aria-label="Faixas do espectro refletidas pelo objeto"><span class="band band-violet"></span><span class="band band-blue"></span><span class="band band-cyan"></span><span class="band band-green"></span><span class="band band-yellow"></span><span class="band band-orange"></span><span class="band band-red reflect"></span>
+        </div>
+        <div class="readout">
+         <div>
+          <strong data-template-id="reflected-label" class="canva-text" style="color: rgb(55, 231, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.08rem;">Mais refletida</strong><span id="reflected-text"></span>
+         </div>
+         <div>
+          <strong data-template-id="absorbed-label" class="canva-text" style="color: rgb(55, 231, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.08rem;">Mais absorvida</strong><span id="absorbed-text"></span>
+         </div>
+        </div>
+        <p id="dynamic-explanation" class="dynamic-explanation" aria-live="polite"></p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="roda-newton" class="section" aria-labelledby="newton-title">
+     <div class="content">
+      <div class="section-heading">
+       <p data-template-id="newton-kicker" class="canva-text section-kicker" style="color: rgb(55, 231, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.14rem;">Robótica e óptica</p>
+       <h2 data-template-id="newton-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 24px; letter-spacing: -0.04rem;">Experimento: a Roda de Newton</h2>
+       <p data-template-id="newton-description" class="canva-text section-description" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 17px; line-height: 1.65;">Um experimento visual que une o espectro de cores, a persistência da visão e o controle de movimento realizado nas aulas de Robótica.</p>
+      </div>
+      <div class="newton-layout">
+       <div data-template-id="newton-visual-card" class="canva-card newton-visual glass" style="background: rgba(13, 34, 67, 0.66);">
+        <div class="newton-machine">
+         <div class="machine-grid" aria-hidden="true"></div>
+         <div class="wheel-wrap" aria-label="Roda de Newton conectada a um motor DC">
+          <div id="newton-wheel" class="newton-wheel" aria-hidden="true"></div>
+          <div class="axle" aria-hidden="true"></div>
+          <div class="motor" aria-hidden="true"></div>
+         </div>
+         <p data-template-id="newton-visual-caption" class="canva-text newton-note" style="color: rgb(216, 239, 255); font-weight: 700; font-style: normal; font-size: 16px; letter-spacing: 0.06rem;">Roda segmentada + motor DC</p>
+        </div>
+       </div>
+       <div data-template-id="newton-copy-card" class="canva-panel newton-copy glass" style="background: rgba(13, 34, 67, 0.66);">
+        <p data-template-id="newton-explanation" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.65;">A Roda de Newton reúne as cores do espectro visível em setores coloridos. Quando a roda gira rapidamente, a persistência da visão faz essas cores se misturarem na nossa percepção, produzindo uma aparência próxima do branco.</p>
+        <div class="flow-chart" aria-label="Fluxo do experimento da roda de Newton">
+         <div class="flow-step">
+          <span>1</span><strong data-template-id="flow-arduino" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 16px;">Arduino</strong>
+         </div>
+         <div class="flow-step">
+          <span>2</span><strong data-template-id="flow-motor" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 16px;">Controle do motor DC</strong>
+         </div>
+         <div class="flow-step">
+          <span>3</span><strong data-template-id="flow-wheel" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 16px;">Rotação da roda</strong>
+         </div>
+         <div class="flow-step">
+          <span>4</span><strong data-template-id="flow-vision" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 16px;">Persistência da visão</strong>
+         </div>
+         <div class="flow-step">
+          <span>5</span><strong data-template-id="flow-perception" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 16px;">Percepção das cores</strong>
+         </div>
+        </div><button id="spin-button" data-template-id="spin-button" class="canva-button primary-button" type="button" aria-pressed="false" style="background: rgb(55, 231, 255); color: rgb(6, 18, 38); font-weight: 800; font-style: normal; font-size: 16px;">Demonstrar rotação</button>
+        <div class="component-grid" aria-label="Componentes do experimento">
+         <div data-template-id="component-arduino" class="canva-card component" style="background: rgb(16, 42, 80);">
+          <span class="component-symbol" aria-hidden="true">▣</span>
+          <p data-template-id="component-arduino-text" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 16px;">Arduino: envia o comando de controle.</p>
+         </div>
+         <div data-template-id="component-motor" class="canva-card component" style="background: rgb(16, 42, 80);">
+          <span class="component-symbol" aria-hidden="true">⚙</span>
+          <p data-template-id="component-motor-text" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 16px;">Motor DC: transforma energia em rotação.</p>
+         </div>
+         <div data-template-id="component-wheel" class="canva-card component" style="background: rgb(16, 42, 80);">
+          <span class="component-symbol" aria-hidden="true">◉</span>
+          <p data-template-id="component-wheel-text" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 16px;">Roda colorida: reúne setores do espectro.</p>
+         </div>
+         <div data-template-id="component-power" class="canva-card component" style="background: rgb(16, 42, 80);">
+          <span class="component-symbol" aria-hidden="true">ϟ</span>
+          <p data-template-id="component-power-text" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 16px;">Fonte de alimentação: energiza o sistema.</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="tecnologia" class="section" aria-labelledby="tech-title">
+     <div class="content">
+      <div class="section-heading">
+       <p data-template-id="tech-kicker" class="canva-text section-kicker" style="color: rgb(55, 231, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.14rem;">Tecnologia por trás do site</p>
+       <h2 data-template-id="tech-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 24px; letter-spacing: -0.04rem;">HTML e CSS</h2>
+       <p data-template-id="tech-description" class="canva-text section-description" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 17px; line-height: 1.65;">O próprio Projeto Integrador - IFA usa tecnologias web para organizar conteúdos científicos, criar interações e transformar a Física em uma experiência visual.</p>
+      </div>
+      <div class="tech-grid">
+       <article data-template-id="html-card" class="canva-card tech-card glass" style="background: rgba(13, 34, 67, 0.66);"><span data-template-id="html-badge" class="canva-tag tech-badge" style="background: rgb(55, 231, 255); color: rgb(6, 18, 38); font-weight: 900; font-style: normal; font-size: 16px; letter-spacing: 0.08rem;">HTML = ESTRUTURA</span>
+        <h3 data-template-id="html-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 22px;">A organização da página</h3>
+        <p data-template-id="html-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.58;">HTML estrutura o conteúdo com elementos como títulos, seções, botões, listas e cartões. É a base que dá sentido e ordem às informações.</p>
+        <pre data-template-id="html-code" class="canva-text code-sample" style="color: rgb(200, 247, 255); font-weight: 400; font-style: normal; font-size: 13px; line-height: 1.7;">&lt;section&gt;
+  &lt;h2&gt;Roda de Newton&lt;/h2&gt;
+  &lt;button&gt;Girar&lt;/button&gt;
+&lt;/section&gt;</pre>
+       </article>
+       <article data-template-id="css-card" class="canva-card tech-card glass" style="background: rgba(13, 34, 67, 0.66);"><span data-template-id="css-badge" class="canva-tag tech-badge css-badge" style="background: rgb(255, 95, 210); color: rgb(6, 18, 38); font-weight: 900; font-style: normal; font-size: 16px; letter-spacing: 0.08rem;">CSS = ESTILO</span>
+        <h3 data-template-id="css-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 22px;">A aparência e o movimento</h3>
+        <p data-template-id="css-text" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.58;">CSS define cores, espaçamentos, tipografia, responsividade e animações. É ele que cria o painel de laboratório futurista deste site.</p>
+        <pre data-template-id="css-code" class="canva-text code-sample" style="color: rgb(200, 247, 255); font-weight: 400; font-style: normal; font-size: 13px; line-height: 1.7;">.roda {
+  border-radius: 50%;
+  animation: girar .3s linear infinite;
+}</pre>
+       </article>
+      </div>
+      <div data-template-id="project-tech-note" class="canva-banner project-tech-note" style="background: linear-gradient(100deg, rgba(156, 124, 255, 0.14), rgba(255, 95, 210, 0.09));">
+       <p data-template-id="project-tech-text" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 18px; line-height: 1.55;">Neste projeto, HTML e CSS trabalham juntos para apresentar a Física de forma interativa e visual: a estrutura organiza o conhecimento, enquanto o estilo torna conceitos como luz, espectro e movimento mais fáceis de observar.</p>
+      </div>
+     </div>
+    </section>
+    <section id="desafio" class="section" aria-labelledby="quiz-title">
+     <div class="content">
+      <div data-template-id="quiz-panel" class="canva-panel quiz-shell glass" style="background: rgba(13, 34, 67, 0.66);">
+       <div class="quiz-top">
+        <div>
+         <p data-template-id="quiz-kicker" class="canva-text section-kicker" style="color: rgb(55, 231, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.14rem;">Teste seus conhecimentos</p>
+         <h2 data-template-id="quiz-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 24px; letter-spacing: -0.04rem;">Desafio da visão, Robótica e tecnologia</h2>
+         <p data-template-id="quiz-description" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 16px;">Responda uma pergunta por vez e acompanhe sua pontuação em 7 desafios.</p>
+        </div>
+        <div class="score-box" aria-live="polite">
+         <small data-template-id="score-label" class="canva-text" style="color: rgb(185, 202, 228); font-weight: 400; font-style: normal; font-size: 13px;">Pontuação</small><strong id="score-value">0/7</strong>
+        </div>
+       </div>
+       <div id="quiz-play">
+        <div class="progress-row">
+         <span id="question-counter">Pergunta 1 de 7</span><span id="progress-percent">14%</span>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+         <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="question-card">
+         <h3 id="question-text"></h3>
+         <div id="answers" class="answers"></div>
+         <p id="feedback" class="feedback" aria-live="polite"></p>
+        </div>
+        <div class="quiz-actions">
+         <button data-template-id="next-button" id="next-button" class="canva-button primary-button hidden" type="button" style="background: rgb(55, 231, 255); color: rgb(6, 18, 38); font-weight: 800; font-style: normal; font-size: 16px;">Próxima pergunta</button>
+        </div>
+       </div>
+       <div id="quiz-result" class="final-result hidden" aria-live="polite">
+        <div class="result-orbit" aria-hidden="true">
+         ✦
+        </div>
+        <h3 data-template-id="result-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 27px;">Resultado final</h3>
+        <p id="result-message"></p>
+        <div class="quiz-actions" style="justify-content:center">
+         <button data-template-id="restart-button" id="restart-button" class="canva-button secondary-button" type="button" style="background: rgba(255, 255, 255, 0.05); color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 16px;">Reiniciar desafio</button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="resumo" class="section" aria-labelledby="summary-title">
+     <div class="content">
+      <div class="section-heading">
+       <p data-template-id="summary-kicker" class="canva-text section-kicker" style="color: rgb(55, 231, 255); font-weight: 800; font-style: normal; font-size: 16px; letter-spacing: 0.14rem;">Fechamento</p>
+       <h2 data-template-id="summary-title" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 24px; letter-spacing: -0.04rem;">Resumo para apresentar</h2>
+      </div>
+      <div class="summary-grid">
+       <article data-template-id="summary-card-1" class="canva-card summary-card glass" style="background: rgba(13, 34, 67, 0.66);">
+        <span data-template-id="summary-number-1" class="canva-text summary-index" style="color: rgb(255, 95, 210); font-weight: 900; font-style: normal; font-size: 16px; letter-spacing: 0.12rem;">01</span>
+        <h3 data-template-id="summary-text-1" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 17px; line-height: 1.42;">A luz branca contém diferentes faixas de cores visíveis.</h3>
+       </article>
+       <article data-template-id="summary-card-2" class="canva-card summary-card glass" style="background: rgba(13, 34, 67, 0.66);">
+        <span data-template-id="summary-number-2" class="canva-text summary-index" style="color: rgb(255, 95, 210); font-weight: 900; font-style: normal; font-size: 16px; letter-spacing: 0.12rem;">02</span>
+        <h3 data-template-id="summary-text-2" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 17px; line-height: 1.42;">A Roda de Newton mostra que cores em rotação rápida podem ser integradas pela visão.</h3>
+       </article>
+       <article data-template-id="summary-card-3" class="canva-card summary-card glass" style="background: rgba(13, 34, 67, 0.66);">
+        <span data-template-id="summary-number-3" class="canva-text summary-index" style="color: rgb(255, 95, 210); font-weight: 900; font-style: normal; font-size: 16px; letter-spacing: 0.12rem;">03</span>
+        <h3 data-template-id="summary-text-3" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 700; font-style: normal; font-size: 17px; line-height: 1.42;">HTML e CSS tornam a explicação científica organizada, interativa e visual.</h3>
+       </article>
+      </div>
+      <div data-template-id="closing-callout" class="canva-banner closing-callout" style="background: linear-gradient(100deg, rgba(55, 231, 255, 0.14), rgba(156, 124, 255, 0.11), rgba(255, 95, 210, 0.1));">
+       <p data-template-id="closing-text" class="canva-text" style="color: rgb(245, 251, 255); font-weight: 800; font-style: normal; font-size: 25px; line-height: 1.35;">Projeto Integrador - IFA: a Física ganha movimento quando luz, Robótica e tecnologia trabalham juntas.</p>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer>
+    <div data-template-id="footer-text" class="canva-footer" style="color: rgb(159, 180, 210); font-weight: 700; font-style: normal; font-size: 16px; letter-spacing: 0.12rem;">Projeto Integrador - IFA • Física • Ótica • Robótica • Tecnologia</div>
+   </footer>
+  </div>
+  <script>
+    const colorData = {
+      vermelho: { color:"#f25060", glow:"rgba(242,80,96,.62)", reflected:"Principalmente vermelho.", absorbed:"Grande parte das outras faixas visíveis.", bands:[6], explanation:"O objeto parece vermelho porque reflete mais luz vermelha para os seus olhos e absorve boa parte das demais frequências." },
+      verde: { color:"#48df8b", glow:"rgba(72,223,139,.58)", reflected:"Principalmente verde.", absorbed:"Grande parte das outras faixas visíveis.", bands:[3], explanation:"O objeto parece verde porque a luz verde é refletida com maior intensidade, enquanto outras cores são mais absorvidas pelo material." },
+      azul: { color:"#4e9cff", glow:"rgba(78,156,255,.62)", reflected:"Principalmente azul.", absorbed:"Grande parte das outras faixas visíveis.", bands:[1,2], explanation:"O objeto parece azul porque reflete faixas azuladas do espectro. Essa luz chega à retina e ativa principalmente cones sensíveis a essas frequências." },
+      branco: { color:"#f4fbff", glow:"rgba(220,246,255,.7)", reflected:"Muitas faixas do espectro visível.", absorbed:"Pouca luz visível é absorvida.", bands:[0,1,2,3,4,5,6], explanation:"Um objeto branco reflete grande parte das frequências da luz visível. Por isso, vários tipos de cones são estimulados ao mesmo tempo." }
+    };
+
+    const orb = document.getElementById("color-orb");
+    const reflectedText = document.getElementById("reflected-text");
+    const absorbedText = document.getElementById("absorbed-text");
+    const dynamicExplanation = document.getElementById("dynamic-explanation");
+    const bands = [...document.querySelectorAll(".band")];
+
+    function setColor(name) {
+      const current = colorData[name];
+      orb.style.background = current.color;
+      orb.style.boxShadow = `inset -25px -30px 35px rgba(0,0,0,.35), inset 15px 15px 24px rgba(255,255,255,.28), 0 0 44px ${current.glow}`;
+      orb.setAttribute("aria-label", `Objeto ${name}`);
+      reflectedText.textContent = current.reflected;
+      absorbedText.textContent = current.absorbed;
+      dynamicExplanation.textContent = current.explanation;
+      bands.forEach((band, index) => band.classList.toggle("reflect", current.bands.includes(index)));
+      document.querySelectorAll(".swatch").forEach((button) => {
+        const active = button.dataset.color === name;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+    }
+
+    document.querySelectorAll(".swatch").forEach((button) => {
+      button.addEventListener("click", () => setColor(button.dataset.color));
+    });
+
+    const wheel = document.getElementById("newton-wheel");
+    const spinButton = document.getElementById("spin-button");
+    spinButton.addEventListener("click", () => {
+      const spinning = wheel.classList.toggle("spinning");
+      spinButton.setAttribute("aria-pressed", String(spinning));
+    });
+
+    const quizQuestions = [
+      {
+        question: "O que chamamos de luz branca?",
+        options: ["Uma luz formada por várias cores do espectro visível.", "Uma luz que não possui comprimento de onda.", "Uma luz formada somente pela cor azul.", "Uma luz absorvida por todos os objetos."],
+        correct: 0,
+        feedback: "A luz branca pode ser separada em diversas cores visíveis, como em um prisma ou arco-íris."
+      },
+      {
+        question: "Por que um objeto vermelho parece vermelho sob luz branca?",
+        options: ["Porque ele cria luz vermelha sozinho.", "Porque absorve somente a luz vermelha.", "Porque reflete mais luz vermelha e absorve outras faixas.", "Porque a retina não enxerga outras cores."],
+        correct: 2,
+        feedback: "A cor percebida depende principalmente da luz que o objeto reflete até os olhos."
+      },
+      {
+        question: "Qual é a função principal dos cones na retina?",
+        options: ["Detectar cores e detalhes em ambientes iluminados.", "Produzir a luz que entra no olho.", "Controlar a abertura da pupila.", "Absorver todas as frequências da luz."],
+        correct: 0,
+        feedback: "Os cones são células fotorreceptoras especialmente importantes para a visão de cores."
+      },
+      {
+        question: "O que é o espectro visível?",
+        options: ["A região de cores que o olho humano consegue perceber.", "O conjunto de sons que ouvimos.", "A parte escura atrás da retina.", "Uma lente dentro da pupila."],
+        correct: 0,
+        feedback: "O espectro visível reúne as faixas de luz que nosso sistema visual pode detectar."
+      },
+      {
+        question: "Na Roda de Newton, por que os setores coloridos parecem próximos do branco quando giram rapidamente?",
+        options: ["Porque o motor apaga as cores.", "Porque a persistência da visão mistura rapidamente as cores percebidas.", "Porque o Arduino troca as cores por luz branca.", "Porque a roda deixa de refletir luz."],
+        correct: 1,
+        feedback: "A visão mantém os estímulos por um curto tempo e integra as cores que chegam em sequência muito rápida."
+      },
+      {
+        question: "No experimento realizado nas aulas de Robótica, qual é a função do Arduino?",
+        options: ["Controlar o motor DC que gira a roda.", "Pintar os setores coloridos.", "Substituir a fonte de alimentação.", "Ser uma lente para observar a roda."],
+        correct: 0,
+        feedback: "O Arduino pode enviar comandos para controlar o motor DC e produzir a rotação da Roda de Newton."
+      },
+      {
+        question: "Qual relação resume corretamente HTML e CSS?",
+        options: ["HTML organiza a estrutura; CSS define o estilo visual.", "HTML cria apenas cores; CSS cria apenas textos.", "HTML substitui a programação do Arduino; CSS gira o motor.", "HTML e CSS são tipos de luz visível."],
+        correct: 0,
+        feedback: "HTML organiza títulos, seções e botões; CSS define cores, espaçamentos, tipografia, responsividade e animações."
+      }
+    ];
+
+    let quizIndex = 0;
+    let score = 0;
+    let answered = false;
+
+    const questionText = document.getElementById("question-text");
+    const answers = document.getElementById("answers");
+    const feedback = document.getElementById("feedback");
+    const scoreValue = document.getElementById("score-value");
+    const questionCounter = document.getElementById("question-counter");
+    const progressPercent = document.getElementById("progress-percent");
+    const progressBar = document.getElementById("progress-bar");
+    const nextButton = document.getElementById("next-button");
+    const quizPlay = document.getElementById("quiz-play");
+    const quizResult = document.getElementById("quiz-result");
+    const resultMessage = document.getElementById("result-message");
+
+    function renderQuestion() {
+      const item = quizQuestions[quizIndex];
+      answered = false;
+      questionText.textContent = item.question;
+      answers.replaceChildren();
+      feedback.textContent = "";
+      feedback.className = "feedback";
+      nextButton.classList.add("hidden");
+
+      const progress = ((quizIndex + 1) / quizQuestions.length) * 100;
+      questionCounter.textContent = `Pergunta ${quizIndex + 1} de ${quizQuestions.length}`;
+      progressPercent.textContent = `${Math.round(progress)}%`;
+      progressBar.style.width = `${progress}%`;
+      scoreValue.textContent = `${score}/${quizQuestions.length}`;
+
+      item.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "answer";
+        button.setAttribute("aria-label", `Alternativa ${String.fromCharCode(65 + index)}: ${option}`);
+        button.innerHTML = `<span class="answer-letter">${String.fromCharCode(65 + index)}</span><span>${option}</span>`;
+        button.addEventListener("click", () => answerQuestion(index));
+        answers.appendChild(button);
+      });
+    }
+
+    function answerQuestion(selectedIndex) {
+      if (answered) return;
+      answered = true;
+      const item = quizQuestions[quizIndex];
+      const answerButtons = [...answers.querySelectorAll(".answer")];
+      answerButtons.forEach((button, index) => {
+        button.disabled = true;
+        if (index === item.correct) button.classList.add("correct");
+        if (index === selectedIndex && index !== item.correct) button.classList.add("incorrect");
+      });
+
+      const correct = selectedIndex === item.correct;
+      if (correct) score++;
+      scoreValue.textContent = `${score}/${quizQuestions.length}`;
+      feedback.textContent = `${correct ? "✓ Resposta correta." : "✕ Ainda não."} ${item.feedback}`;
+      feedback.className = "feedback show";
+      nextButton.classList.remove("hidden");
+    }
+
+    nextButton.addEventListener("click", () => {
+      if (!answered) return;
+      if (quizIndex < quizQuestions.length - 1) {
+        quizIndex++;
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    });
+
+    function showResult() {
+      quizPlay.classList.add("hidden");
+      quizResult.classList.remove("hidden");
+      let message = "";
+      if (score === 7) message = "Excelente! Você conectou óptica, Robótica e tecnologia web com muita precisão.";
+      else if (score >= 5) message = "Muito bom! Você domina as ideias principais sobre cores, Roda de Newton e HTML/CSS.";
+      else message = "Bom começo! Reveja os conceitos acima e tente novamente para fortalecer sua apresentação.";
+      resultMessage.textContent = `Você acertou ${score} de ${quizQuestions.length}. ${message}`;
+    }
+
+    document.getElementById("restart-button").addEventListener("click", () => {
+      quizIndex = 0;
+      score = 0;
+      quizResult.classList.add("hidden");
+      quizPlay.classList.remove("hidden");
+      renderQuestion();
+    });
+
+    setColor("vermelho");
+    renderQuestion();
+  </script>
+ 
+</body></html>
