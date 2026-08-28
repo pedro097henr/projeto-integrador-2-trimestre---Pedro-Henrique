@@ -1,4 +1,3 @@
-/* Configurações Gerais e Reset de Margens */
 * {
     margin: 0;
     padding: 0;
@@ -9,291 +8,96 @@
 body {
     background-color: #f4f7f6;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Estilização da Barra do Cabeçalho */
-.main-header {
-    background-color: #1a252f; /* Azul escuro profissional */
-    padding: 20px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-/* Container para alinhar os elementos */
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 0 20px;
-}
-
-/* Responsividade: Alinha título e botões lado a lado em telas maiores (PC) */
-@media (min-width: 768px) {
-    .header-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-/* Estilo do Título Principal */
-.main-title {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-/* Menu de Navegação */
-.nav-menu {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* Estilo Base dos Botões */
-.nav-btn {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 10px 20px;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-/* Customização de Cores por Matéria (Efeito normal e Efeito Hover) */
-
-/* 1 - Programação (Azul) */
-.btn-prog {
-    background-color: #3498db;
-}
-.btn-prog:hover {
-    background-color: transparent;
-    border-color: #3498db;
-    color: #3498db;
-}
-
-/* 2 - Robótica (Laranja) */
-.btn-robo {
-    background-color: #e67e22;
-}
-.btn-robo:hover {
-    background-color: transparent;
-    border-color: #e67e22;
-    color: #e67e22;
-}
-
-/* 3 - Física e Técnico Ciência (Verde) */
-.btn-fisica {
-    background-color: #2ecc71;
-}
-.btn-fisica:hover {
-    background-color: transparent;
-    border-color: #2ecc71;
-    color: #2ecc71;
-}
-
-/* Placeholder apenas para espaçamento do corpo da página */
-.content-placeholder {
-    max-width: 1200px;
-    margin: 60px auto;
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
     text-align: center;
-    font-size: 18px;
-    color: #7f8c8d;
-}
-/* Configurações Gerais da Sessão */
-.secao-robotica {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f172a; /* Azul escuro tecnológico */
-    color: #f8fafc;
-    padding: 60px 20px;
-    display: flex;
-    justify-content: center;
+    padding: 2rem 1rem;
 }
 
-.container-robotica {
-    max-width: 1100px;
-    width: 100%;
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
 }
 
-/* Cabeçalho */
-.topo-secao {
-    text-align: center;
-    margin-bottom: 50px;
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-.topo-secao .subtitulo {
-    color: #38bdf8; /* Azul claro brilhante */
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 2px;
+.conteudo {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.topo-secao h2 {
-    font-size: 2.5rem;
-    margin: 10px 0 15px 0;
-    color: #ffffff;
+.conteudo h2 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
 }
 
-.topo-secao p {
-    color: #94a3b8;
-    max-width: 600px;
-    margin: 0 auto;
+.conteudo ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 2rem 0;
+}
+
+.quiz-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.quiz-container h2 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
+}
+
+.pergunta {
+    margin-bottom: 1.2rem;
+}
+
+.pergunta p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0.3rem;
+}
+
+button {
+    background-color: #2a5298;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e3c72;
+}
+
+#resultado {
+    margin-top: 1rem;
     font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* Layout Grid para o Conteúdo */
-.conteudo-robotica {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    align-items: center;
-}
-
-/* Lado Esquerdo: Área do Disco */
-.card-visual {
-    background: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 16px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Animação do Disco de Newton */
-.disco-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 30px;
-}
-
-.disco-newton {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    /* Gradiente simulando as cores do arco-íris */
-    background: conic-gradient(
-        #ff0000 0deg 51deg, 
-        #ff7f00 51deg 102deg, 
-        #ffff00 102deg 153deg, 
-        #00ff00 153deg 204deg, 
-        #0000ff 204deg 255deg, 
-        #4b0082 255deg 306deg, 
-        #8b00ff 306deg 360deg
-    );
-    border: 4px solid #475569;
-    /* Efeito de rotação contínua e rápida */
-    animation: rodarDisco 0.15s linear infinite; 
-}
-
-/* Detalhe do centro do motor */
-.eixo-motor {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 16px;
-    height: 16px;
-    background-color: #64748b;
-    border: 3px solid #0f172a;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-}
-
-/* Status do Motor */
-.status-motor {
-    background-color: #0f172a;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: #cbd5e1;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid #334155;
-}
-
-.led-status {
-    width: 8px;
-    height: 8px;
-    background-color: #22c55e; /* Verde piscando/ligado */
-    border-radius: 50%;
-    box-shadow: 0 0 8px #22c55e;
-}
-
-/* Lado Direito: Textos Informativos */
-.card-detalhes {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.info-bloco h3 {
-    color: #38bdf8;
-    font-size: 1.3rem;
-    margin-bottom: 8px;
-}
-
-.info-bloco p {
-    color: #cbd5e1;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Lista de Componentes */
-.lista-componentes {
-    list-style: none;
-    padding: 0;
-    margin: 5px 0 0 0;
-}
-
-.lista-componentes li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 8px;
-    color: #cbd5e1;
-}
-
-/* Marcador personalizado eletrônico */
-.lista-componentes li::before {
-    content: "■";
-    position: absolute;
-    left: 0;
-    color: #38bdf8;
-    font-size: 0.8rem;
-    top: 1px;
-}
-
-/* Keyframes para fazer o disco girar rápido */
-@keyframes rodarDisco {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Responsividade para celulares e tablets */
-@media (max-width: 768px) {
-    .conteudo-robotica {
-        grid-template-columns: 1fr;
-    }
-    
-    .topo-secao h2 {
-        font-size: 2rem;
-    }
 }

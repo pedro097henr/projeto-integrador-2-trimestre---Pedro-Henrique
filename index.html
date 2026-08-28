@@ -1,77 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto integrador 2 trimestre</title>
+    <title>Ótica e a Visão das Cores</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-</body>
-</html>
-<header class="main-header">
-        <div class="header-container">
-            <h1 class="main-title">Projeto Integrador IFA</h1>
-            
-            <nav class="nav-menu">
-                <a href="#programacao" class="nav-btn btn-prog">Programação</a>
-                <a href="#robotica" class="nav-btn btn-robo">Robótica</a>
-                <a href="#fisica-ciencia" class="nav-btn btn-fisica">Física e TecnicoCiência</a>
-            </nav>
-        </div>
+
+    <header>
+        <h1>Ótica Física e Tecnociência</h1>
+        <p>Como os olhos humanos percebem as cores dos objetos</p>
     </header>
-    <main>
-        <img src="Gemini_Generated_Image_3057il3057il3057.png" alt="">
+
+    <main class="container">
+        
+        <section class="conteudo">
+            <h2>A Física da Luz e dos Objetos</h2>
+            <p>
+                A cor não é uma propriedade intrínseca de um objeto, mas sim o resultado da interação entre a luz, a matéria e o sistema visual. Do ponto de vista da <strong>física</strong>, a luz visível é uma onda eletromagnética composta por diferentes comprimentos de onda, onde cada comprimento corresponde a uma cor específica.
+            </p>
+            <p>
+                Quando a luz branca (como a do Sol) atinge um objeto, parte dos comprimentos de onda é absorvida e outra parte é refletida. A cor que enxergamos em um objeto é exatamente a luz que ele <strong>reflete</strong>. Um objeto vermelho, por exemplo, absorve quase todas as cores do espectro e reflete a luz na faixa do vermelho.
+            </p>
+        </section>
+
+        
+
+[Image of visible light spectrum and color reflection on objects]
+
+
+        <section class="conteudo">
+            <h2>A Tecnociência da Visão Humana</h2>
+            <p>
+                No olho humano, a luz atravessa a córnea e o cristalino até atingir a <strong>retina</strong>, uma camada de células fotorreceptoras no fundo do olho. A tecnociência e a biologia explicam o funcionamento de dois tipos principais de células:
+            </p>
+            <ul>
+                <li><strong>Bastonetes:</strong> Responsáveis pela visão em locais com pouca iluminação e pela percepção de movimento e formas (não detectam cores).</li>
+                <li><strong>Cones:</strong> Responsáveis pela visão das cores. Existem três tipos de cones, sensíveis principalmente ao Vermelho, Verde e Azul (sistema RGB).</li>
+            </ul>
+            <p>
+                Os sinais elétricos gerados pelos cones são enviados pelo nervo óptico até o cérebro, que processa e combina as informações para formar a imagem colorida que percebemos.
+            </p>
+        </section>
+
+        <hr>
+
+        <section class="quiz-container">
+            <h2>Quiz: Teste seus conhecimentos</h2>
+            <form id="quiz-form">
+                
+                <div class="pergunta">
+                    <p>1. O que acontece com a luz quando vemos uma maçã vermelha?</p>
+                    <label><input type="radio" name="q1" value="a"> A maçã absorve a luz vermelha e reflete as outras.</label><br>
+                    <label><input type="radio" name="q1" value="b"> A maçã reflete a luz vermelha e absorve as outras cores.</label><br>
+                    <label><input type="radio" name="q1" value="c"> A maçã emite sua própria luz vermelha.</label>
+                </div>
+
+                <div class="pergunta">
+                    <p>2. Quais células da retina são responsáveis pela detecção das cores?</p>
+                    <label><input type="radio" name="q2" value="a"> Bastonetes.</label><br>
+                    <label><input type="radio" name="q2" value="b"> Córnea.</label><br>
+                    <label><input type="radio" name="q2" value="c"> Cones.</label>
+                </div>
+
+                <button type="button" onclick="verificarRespostas()">Enviar Respostas</button>
+            </form>
+            <div id="resultado"></div>
+        </section>
+
     </main>
 
-    <main class="content-placeholder">
-        <p>Selecione uma das matérias acima para navegar pelo projeto.</p>
-    </main>
-    <section class="secao-robotica">
-    <div class="container-robotica">
-        <div class="topo-secao">
-            <span class="subtitulo">Laboratório de Robótica</span>
-            <h2>O Experimento do Disco de Newton</h2>
-            <p>Descubra como unimos a física óptica ao controle de motores usando o Arduino para desafiar a percepção visual.</p>
-        </div>
+    <script>
+        function verificarRespostas() {
+            let pontuacao = 0;
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const resultado = document.getElementById('resultado');
 
-        <div class="conteudo-robotica">
-            
-            <div class="card-visual">
-                <div class="disco-container">
-                    <div class="eixo-motor"></div>
-                    <div class="disco-newton"></div>
-                </div>
-                <div class="status-motor">
-                    <span class="led-status"></span> Motor DC: 255 RPM (Velocidade Máxima)
-                </div>
-            </div>
+            if (!q1 || !q2) {
+                resultado.innerHTML = "<p style='color: red;'>Por favor, responda a todas as perguntas!</p>";
+                return;
+            }
 
-            <div class="card-detalhes">
-                <div class="info-bloco">
-                    <h3>Como Funciona?</h3>
-                    <p>O Disco de Newton é um experimento que demonstra a composição da luz branca. Quando o círculo colorido gira em alta velocidade, as cores se misturam em nossa retina devido à <strong>persistência retiniana</strong>, fazendo o disco parecer branco (ou cinzento).</p>
-                </div>
+            if (q1.value === 'b') pontuacao++;
+            if (q2.value === 'c') pontuacao++;
 
-                <div class="info-bloco">
-                    <h3>Componentes Utilizados</h3>
-                    <ul class="lista-componentes">
-                        <li><strong>Arduino Uno:</strong> Responsável por processar o código e controlar a velocidade.</li>
-                        <li><strong>Motor DC:</strong> Garante a rotação necessária para alcançar o efeito visual.</li>
-                        <li><strong>Transistor & Potenciômetro:</strong> Para regular a corrente do motor com segurança e ajustar a velocidade.</li>
-                    </ul>
-                </div>
-
-                <div class="info-bloco">
-                    <h3>O que aprendemos em sala</h3>
-                    <p>Programamos o Arduino para aplicar modulação por largura de pulso (PWM). Com isso, conseguimos controlar o motor DC com precisão, aumentando a velocidade gradativamente até que as cores separadas sumissem, revelando a ilusão da luz branca.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
+            resultado.innerHTML = `<p style='color: green; font-weight: bold;'>Você acertou ${pontuacao} de 2 perguntas!</p>`;
+        }
+    </script>
 </body>
 </html>
