@@ -3,90 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ótica e a Visão das Cores</title>
+    <title>Óptica e Tecnociência: A Física das Cores</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Ótica Física e Tecnociência</h1>
-        <p>Como os olhos humanos percebem as cores dos objetos</p>
+    <header class="hero">
+        <div class="overlay">
+            <h1>A Física da Visão e das Cores</h1>
+            <p>Tecnociência, Luz e Percepção Humana</p>
+        </div>
     </header>
 
     <main class="container">
         
-        <section class="conteudo">
-            <h2>A Física da Luz e dos Objetos</h2>
-            <p>
-                A cor não é uma propriedade intrínseca de um objeto, mas sim o resultado da interação entre a luz, a matéria e o sistema visual. Do ponto de vista da <strong>física</strong>, a luz visível é uma onda eletromagnética composta por diferentes comprimentos de onda, onde cada comprimento corresponde a uma cor específica.
-            </p>
-            <p>
-                Quando a luz branca (como a do Sol) atinge um objeto, parte dos comprimentos de onda é absorvida e outra parte é refletida. A cor que enxergamos em um objeto é exatamente a luz que ele <strong>reflete</strong>. Um objeto vermelho, por exemplo, absorve quase todas as cores do espectro e reflete a luz na faixa do vermelho.
-            </p>
+        <section class="card">
+            <h2>Física da Luz e Tecnociência</h2>
+            <p>A luz visível é uma pequena faixa do espectro eletromagnético, composta por ondas com diferentes comprimentos. Quando a luz atinge um objeto, parte dela é absorvida e outra parte é refletida. A cor que percebemos em um objeto é determinada exatamente pelo comprimento de onda da luz refletida por ele.</p>
+            <p>A tecnociência utiliza esses princípios ópticos para desenvolver telas (como monitores RGB), sensores fotográficos e lentes corretivas avançadas, mapeando como a luz se comporta na matéria.</p>
         </section>
 
         
 
-[Image of visible light spectrum and color reflection on objects]
+[Image of visible light spectrum and wavelength perception]
 
 
-        <section class="conteudo">
-            <h2>A Tecnociência da Visão Humana</h2>
-            <p>
-                No olho humano, a luz atravessa a córnea e o cristalino até atingir a <strong>retina</strong>, uma camada de células fotorreceptoras no fundo do olho. A tecnociência e a biologia explicam o funcionamento de dois tipos principais de células:
-            </p>
+        <section class="card">
+            <h2>Como o Olho Humano Processa as Cores</h2>
+            <p>Na retina, localizada no fundo do olho humano, existem células fotorreceptoras especializadas chamadas <strong>cones</strong> e <strong>bastonetes</strong>:</p>
             <ul>
-                <li><strong>Bastonetes:</strong> Responsáveis pela visão em locais com pouca iluminação e pela percepção de movimento e formas (não detectam cores).</li>
-                <li><strong>Cones:</strong> Responsáveis pela visão das cores. Existem três tipos de cones, sensíveis principalmente ao Vermelho, Verde e Azul (sistema RGB).</li>
+                <li><strong>Bastonetes:</strong> Sensíveis à intensidade luminosa (visão em ambientes escuros, sem percepção de cor).</li>
+                <li><strong>Cones:</strong> Responsáveis pela visão em cores. Dividem-se em três tipos, sensíveis a comprimentos de onda diferentes: <strong>Vermelho (L)</strong>, <strong>Verde (M)</strong> e <strong>Azul (S)</strong>.</li>
             </ul>
-            <p>
-                Os sinais elétricos gerados pelos cones são enviados pelo nervo óptico até o cérebro, que processa e combina as informações para formar a imagem colorida que percebemos.
-            </p>
+            <p>O cérebro combina os sinais enviados por esses três tipos de cones para interpretar milhões de nuances de cores.</p>
         </section>
 
-        <hr>
+        
 
-        <section class="quiz-container">
-            <h2>Quiz: Teste seus conhecimentos</h2>
-            <form id="quiz-form">
+        <section class="card quiz-container">
+            <h2>Quiz de Óptica: Teste seus Conhecimentos</h2>
+            <form id="quizForm">
                 
-                <div class="pergunta">
-                    <p>1. O que acontece com a luz quando vemos uma maçã vermelha?</p>
-                    <label><input type="radio" name="q1" value="a"> A maçã absorve a luz vermelha e reflete as outras.</label><br>
-                    <label><input type="radio" name="q1" value="b"> A maçã reflete a luz vermelha e absorve as outras cores.</label><br>
-                    <label><input type="radio" name="q1" value="c"> A maçã emite sua própria luz vermelha.</label>
+                <div class="question">
+                    <p>1. O que determina a cor de um objeto opaco?</p>
+                    <label><input type="radio" name="q1" value="a"> A luz que ele absorve totalmente.</label><br>
+                    <label><input type="radio" name="q1" value="b"> Os comprimentos de onda da luz que ele reflete.</label><br>
+                    <label><input type="radio" name="q1" value="c"> A velocidade com que a luz atravessa o objeto.</label>
                 </div>
 
-                <div class="pergunta">
-                    <p>2. Quais células da retina são responsáveis pela detecção das cores?</p>
+                <div class="question">
+                    <p>2. Quais são as células da retina responsáveis pela percepção das cores?</p>
                     <label><input type="radio" name="q2" value="a"> Bastonetes.</label><br>
-                    <label><input type="radio" name="q2" value="b"> Córnea.</label><br>
+                    <label><input type="radio" name="q2" value="b"> Córneas.</label><br>
                     <label><input type="radio" name="q2" value="c"> Cones.</label>
                 </div>
 
-                <button type="button" onclick="verificarRespostas()">Enviar Respostas</button>
+                <button type="button" onclick="calcularResultado()">Enviar Respostas</button>
             </form>
             <div id="resultado"></div>
         </section>
 
     </main>
 
+    <footer>
+        <p>Apresentação Escolar — Óptica, Física e Tecnociência</p>
+    </footer>
+
     <script>
-        function verificarRespostas() {
-            let pontuacao = 0;
+        function calcularResultado() {
+            let acertos = 0;
             const q1 = document.querySelector('input[name="q1"]:checked');
             const q2 = document.querySelector('input[name="q2"]:checked');
-            const resultado = document.getElementById('resultado');
 
+            if (q1 && q1.value === 'b') acertos++;
+            if (q2 && q2.value === 'c') acertos++;
+
+            const resDiv = document.getElementById('resultado');
             if (!q1 || !q2) {
-                resultado.innerHTML = "<p style='color: red;'>Por favor, responda a todas as perguntas!</p>";
-                return;
+                resDiv.innerHTML = "<p style='color: #e74c3c;'>Por favor, responda todas as perguntas!</p>";
+            } else {
+                resDiv.innerHTML = `<p style='color: #2ecc71;'>Você acertou ${acertos} de 2 perguntas!</p>`;
             }
-
-            if (q1.value === 'b') pontuacao++;
-            if (q2.value === 'c') pontuacao++;
-
-            resultado.innerHTML = `<p style='color: green; font-weight: bold;'>Você acertou ${pontuacao} de 2 perguntas!</p>`;
         }
     </script>
 </body>
