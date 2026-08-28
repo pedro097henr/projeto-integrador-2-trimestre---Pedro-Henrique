@@ -1,90 +1,299 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Óptica e Tecnociência: A Física das Cores</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+ <!doctype html>
+<html lang="pt-BR"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260828-05-5fe3063","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script><script src="/_sdk/50d846425a1e5082.telemetry_sdk.js" integrity="sha512-Otbex+ztlVbcEGql0rXGd/3E3ee/hqAntg6DeuUEMG6pIPbXGOSvZbFZVzknAXi1tH/itQ+ijEhOTr2aWj6CXg=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como os olhos enxergam as cores?</title>
+  <script src="/_sdk/c6bcadf20ce5820f.editing_sdk.js" integrity="sha512-LVukVCTKnKSxy98w+wCVzDAxVXBG2vy32XblXlmJD9CPFnF2/FVc75CFngl41IdXcX3sVHJc9olw64zrPM/FIA=="></script>
+  <style>
+    :root {
+      --bg: #061226;
+      --bg-deep: #020817;
+      --panel: rgba(13, 34, 67, .66);
+      --panel-strong: rgba(12, 31, 62, .9);
+      --line: rgba(150, 221, 255, .2);
+      --text: #f5fbff;
+      --muted: #b9cae4;
+      --cyan: #37e7ff;
+      --violet: #9c7cff;
+      --magenta: #ff5fd2;
+      --green: #6dffb1;
+      --warning: #ffd166;
+      --danger: #ff7b8b;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .35);
+    }
 
-    <header class="hero">
-        <div class="overlay">
-            <h1>A Física da Visão e das Cores</h1>
-            <p>Tecnociência, Luz e Percepção Humana</p>
-        </div>
-    </header>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      width: 100%;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", "Segoe UI", sans-serif;
+    }
 
-    <main class="container">
-        
-        <section class="card">
-            <h2>Física da Luz e Tecnociência</h2>
-            <p>A luz visível é uma pequena faixa do espectro eletromagnético, composta por ondas com diferentes comprimentos. Quando a luz atinge um objeto, parte dela é absorvida e outra parte é refletida. A cor que percebemos em um objeto é determinada exatamente pelo comprimento de onda da luz refletida por ele.</p>
-            <p>A tecnociência utiliza esses princípios ópticos para desenvolver telas (como monitores RGB), sensores fotográficos e lentes corretivas avançadas, mapeando como a luz se comporta na matéria.</p>
-        </section>
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      z-index: -2;
+      pointer-events: none;
+      border-radius: 999px;
+      filter: blur(12px);
+    }
+    body::before {
+      width: 38rem; height: 38rem; top: -18rem; left: -13rem;
+      background: radial-gradient(circle, rgba(55,231,255,.18), transparent 68%);
+    }
+    body::after {
+      width: 44rem; height: 44rem; right: -21rem; top: 25%;
+      background: radial-gradient(circle, rgba(156,124,255,.16), transparent 66%);
+    }
 
-        
+    .space-field {
+      position: fixed; inset: 0; z-index: -3; pointer-events: none; opacity: .58;
+      background-image:
+        radial-gradient(circle at 18% 24%, #d4f8ff 0 1px, transparent 1.5px),
+        radial-gradient(circle at 74% 10%, #fff 0 1px, transparent 1.6px),
+        radial-gradient(circle at 90% 60%, #9cf3ff 0 1px, transparent 1.4px),
+        radial-gradient(circle at 36% 78%, #fff 0 1px, transparent 1.5px),
+        radial-gradient(circle at 8% 88%, #cb9dff 0 1px, transparent 1.5px);
+      background-size: 240px 240px, 310px 310px, 210px 210px, 330px 330px, 280px 280px;
+    }
 
-[Image of visible light spectrum and wavelength perception]
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid var(--warning);
+      outline-offset: 4px;
+    }
 
+    .shell { width: 100%; }
+    .content { width: min(1140px, calc(100% - 40px)); margin: 0 auto; }
 
-        <section class="card">
-            <h2>Como o Olho Humano Processa as Cores</h2>
-            <p>Na retina, localizada no fundo do olho humano, existem células fotorreceptoras especializadas chamadas <strong>cones</strong> e <strong>bastonetes</strong>:</p>
-            <ul>
-                <li><strong>Bastonetes:</strong> Sensíveis à intensidade luminosa (visão em ambientes escuros, sem percepção de cor).</li>
-                <li><strong>Cones:</strong> Responsáveis pela visão em cores. Dividem-se em três tipos, sensíveis a comprimentos de onda diferentes: <strong>Vermelho (L)</strong>, <strong>Verde (M)</strong> e <strong>Azul (S)</strong>.</li>
-            </ul>
-            <p>O cérebro combina os sinais enviados por esses três tipos de cones para interpretar milhões de nuances de cores.</p>
-        </section>
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid rgba(174, 234, 255, .13);
+      background: rgba(2, 8, 23, .72);
+      backdrop-filter: blur(18px);
+    }
+    .topbar-inner {
+      min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+      font-weight: 800; letter-spacing: .08em; font-size: .78rem; text-transform: uppercase;
+    }
+    .brand-mark {
+      width: 29px; height: 29px; display: grid; place-items: center; border-radius: 50%;
+      background: radial-gradient(circle, #fff 0 10%, var(--cyan) 13% 25%, transparent 29%),
+        conic-gradient(from 40deg, var(--cyan), var(--violet), var(--magenta), var(--cyan));
+      box-shadow: 0 0 18px rgba(55,231,255,.7);
+    }
+    .brand-mark::after { content: ""; width: 9px; height: 9px; background: #061226; border-radius: 50%; }
+    .nav-links { display: flex; align-items: center; gap: 18px; }
+    .nav-links a { color: var(--muted); font-size: .85rem; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--cyan); }
 
-        
+    .hero {
+      position: relative; min-height: calc(88 * min(var(--vh, 1vh), 1vh));
+      display: grid; align-items: center; overflow: hidden; padding: 70px 0 52px;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 42px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; margin: 0 0 18px; color: var(--cyan);
+      font-weight: 800; font-size: .78rem; text-transform: uppercase; letter-spacing: .16em;
+    }
+    .pulse-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 0 rgba(55,231,255,.7); animation: pulse 2s infinite; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 720px; margin-bottom: 20px; font-size: clamp(3rem, 7vw, 6.7rem); line-height: .94; letter-spacing: -.065em; }
+    .hero-copy { max-width: 600px; color: var(--muted); font-size: clamp(1rem, 2vw, 1.24rem); line-height: 1.7; }
+    .action-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 29px; }
+    .primary-button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px;
+      padding: 0 21px; border: 1px solid transparent; border-radius: 999px; cursor: pointer;
+      text-decoration: none; font-weight: 800; transition: transform .2s, box-shadow .2s, filter .2s;
+      box-shadow: 0 10px 28px rgba(55,231,255,.18);
+    }
+    .primary-button:hover { transform: translateY(-3px); filter: brightness(1.12); }
+    .arrow { font-size: 1.25rem; line-height: 1; }
 
-        <section class="card quiz-container">
-            <h2>Quiz de Óptica: Teste seus Conhecimentos</h2>
-            <form id="quizForm">
-                
-                <div class="question">
-                    <p>1. O que determina a cor de um objeto opaco?</p>
-                    <label><input type="radio" name="q1" value="a"> A luz que ele absorve totalmente.</label><br>
-                    <label><input type="radio" name="q1" value="b"> Os comprimentos de onda da luz que ele reflete.</label><br>
-                    <label><input type="radio" name="q1" value="c"> A velocidade com que a luz atravessa o objeto.</label>
-                </div>
+    .hero-art { min-height: 400px; display: grid; place-items: center; position: relative; }
+    .orbit { position: absolute; width: 360px; height: 175px; border: 1px solid rgba(104, 225, 255,.32); border-radius: 50%; transform: rotate(-27deg); }
+    .orbit.two { width: 420px; height: 220px; border-color: rgba(255,95,210,.2); transform: rotate(40deg); }
+    .eye-scene { width: min(100%, 410px); aspect-ratio: 1.18; position: relative; display: grid; place-items: center; }
+    .eye-shape {
+      position: relative; width: 310px; height: 174px; overflow: hidden; border: 2px solid rgba(199,246,255,.8);
+      border-radius: 100% 10%; transform: rotate(45deg); background: radial-gradient(circle at 54% 48%, rgba(138,221,255,.38), rgba(21,65,122,.18) 35%, transparent 63%);
+      box-shadow: inset 0 0 35px rgba(55,231,255,.16), 0 0 52px rgba(55,231,255,.18);
+    }
+    .iris {
+      position: absolute; top: 50%; left: 50%; width: 132px; height: 132px; border-radius: 50%;
+      transform: translate(-50%,-50%) rotate(-45deg);
+      background: repeating-conic-gradient(from 0deg, #4de1fc 0 4deg, #218dc7 5deg 11deg, #7e6ce4 12deg 16deg);
+      border: 13px solid rgba(173,243,255,.47); box-shadow: 0 0 35px #40e2ff, inset 0 0 22px #0a1e55;
+    }
+    .pupil { position: absolute; inset: 35px; border-radius: 50%; background: #02050e; box-shadow: inset 0 0 15px #000, 0 0 13px rgba(0,0,0,.8); }
+    .beam { position: absolute; left: -32px; height: 8px; width: 156px; border-radius: 10px; transform-origin: left center; filter: blur(.1px); opacity: .88; }
+    .beam.one { top: 108px; transform: rotate(-18deg); background: linear-gradient(90deg, transparent, var(--cyan)); }
+    .beam.two { top: 173px; transform: rotate(5deg); background: linear-gradient(90deg, transparent, var(--violet)); }
+    .beam.three { top: 237px; transform: rotate(22deg); background: linear-gradient(90deg, transparent, var(--magenta)); }
+    .spectral-strip {
+      position: absolute; bottom: 20px; right: 13px; width: 225px; height: 12px; border-radius: 99px;
+      background: linear-gradient(90deg,#7742e6,#397df6,#37e7ff,#67ffbd,#f9ef71,#ff9f43,#ff4e85);
+      box-shadow: 0 0 28px rgba(120,220,255,.65); animation: shimmer 3.5s linear infinite;
+      background-size: 180% 100%;
+    }
 
-                <div class="question">
-                    <p>2. Quais são as células da retina responsáveis pela percepção das cores?</p>
-                    <label><input type="radio" name="q2" value="a"> Bastonetes.</label><br>
-                    <label><input type="radio" name="q2" value="b"> Córneas.</label><br>
-                    <label><input type="radio" name="q2" value="c"> Cones.</label>
-                </div>
+    .section { position: relative; padding: 92px 0; }
+    .section-heading { max-width: 720px; margin-bottom: 35px; }
+    .section-kicker { color: var(--cyan); text-transform: uppercase; letter-spacing: .16em; font-weight: 800; font-size: .75rem; margin-bottom: 12px; }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.65rem); letter-spacing: -.045em; line-height: 1.02; margin-bottom: 15px; }
+    .section-description { color: var(--muted); line-height: 1.68; font-size: 1.05rem; max-width: 710px; }
 
-                <button type="button" onclick="calcularResultado()">Enviar Respostas</button>
-            </form>
-            <div id="resultado"></div>
-        </section>
+    .glass {
+      border: 1px solid var(--line); background: var(--panel); box-shadow: var(--shadow); backdrop-filter: blur(16px);
+    }
+    .concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .concept-card { min-height: 190px; padding: 23px; border-radius: 20px; transition: border-color .25s, transform .25s, background .25s; }
+    .concept-card:hover { transform: translateY(-5px); border-color: rgba(55,231,255,.55); background: rgba(20,52,93,.8); }
+    .concept-icon {
+      display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 21px; border-radius: 13px;
+      color: var(--cyan); background: rgba(55,231,255,.12); border: 1px solid rgba(55,231,255,.23); font-weight: 900;
+    }
+    .concept-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .concept-card p { color: var(--muted); font-size: .94rem; line-height: 1.55; margin-bottom: 0; }
 
-    </main>
+    .journey-wrap { border-radius: 28px; padding: 26px; overflow: hidden; }
+    .journey { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; position: relative; }
+    .journey::before { content: ""; position: absolute; top: 38px; left: 8%; right: 8%; height: 2px; background: linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); opacity: .55; }
+    .journey-step { position: relative; z-index: 1; text-align: center; }
+    .step-number {
+      width: 76px; height: 76px; margin: 0 auto 16px; display: grid; place-items: center; border-radius: 50%;
+      background: #0a2145; border: 1px solid rgba(130,221,255,.58); color: var(--cyan); font-weight: 900; font-size: 1.25rem;
+      box-shadow: 0 0 0 8px rgba(6,18,38,.88), 0 0 24px rgba(55,231,255,.18);
+    }
+    .journey-step h3 { font-size: .96rem; margin: 0 0 8px; }
+    .journey-step p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.5; }
 
-    <footer>
-        <p>Apresentação Escolar — Óptica, Física e Tecnociência</p>
-    </footer>
+    .experiment { display: grid; grid-template-columns: .9fr 1.1fr; gap: 23px; align-items: stretch; }
+    .color-lab { padding: 28px; border-radius: 25px; }
+    .object-stage { min-height: 275px; display: grid; place-items: center; position: relative; overflow: hidden; border-radius: 19px; background: radial-gradient(circle at center, rgba(122, 220, 255, .13), transparent 58%), #061a37; }
+    .lab-rays { position: absolute; width: 140%; height: 70px; transform: rotate(-22deg); background: linear-gradient(90deg,transparent 5%,rgba(255,86,118,.72) 23%,rgba(255,214,87,.72) 36%,rgba(87,255,157,.72) 50%,rgba(55,231,255,.72) 65%,rgba(118,92,255,.72) 80%,transparent 95%); filter: blur(8px); opacity: .55; }
+    .color-orb {
+      position: relative; z-index: 1; width: 157px; height: 157px; border: 3px solid rgba(255,255,255,.62); border-radius: 50%;
+      background: #f25060; box-shadow: inset -25px -30px 35px rgba(0,0,0,.35), inset 15px 15px 24px rgba(255,255,255,.28), 0 0 44px rgba(242,80,96,.55);
+      transition: background .45s, box-shadow .45s, transform .3s;
+    }
+    .color-orb::after { content: ""; position: absolute; top: 23px; left: 31px; width: 38px; height: 20px; border-radius: 50%; background: rgba(255,255,255,.52); transform: rotate(-28deg); }
+    .lab-caption { position: absolute; bottom: 18px; margin: 0; color: #d8efff; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; }
+    .color-controls { padding: 28px; border-radius: 25px; }
+    .color-controls h3 { margin-bottom: 7px; font-size: 1.4rem; }
+    .color-controls > p { color: var(--muted); margin-bottom: 19px; line-height: 1.55; }
+    .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+    .swatch {
+      min-height: 54px; border: 1px solid rgba(255,255,255,.18); border-radius: 13px; cursor: pointer; color: white;
+      background: rgba(255,255,255,.06); font-weight: 800; transition: transform .2s, border-color .2s, box-shadow .2s;
+    }
+    .swatch:hover, .swatch.active { transform: translateY(-3px); border-color: var(--cyan); box-shadow: 0 0 20px rgba(55,231,255,.25); }
+    .swatch[data-color="vermelho"] { box-shadow: inset 0 -5px #f25060; }
+    .swatch[data-color="verde"] { box-shadow: inset 0 -5px #48df8b; }
+    .swatch[data-color="azul"] { box-shadow: inset 0 -5px #4e9cff; }
+    .swatch[data-color="branco"] { box-shadow: inset 0 -5px #fff; }
+    .spectrum-labels { display: flex; justify-content: space-between; gap: 8px; color: #d4e6ff; font-size: .76rem; margin-bottom: 8px; }
+    .spectrum-track { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .band { height: 27px; border-radius: 7px; opacity: .23; transition: opacity .35s, transform .35s, box-shadow .35s; }
+    .band.reflect { opacity: 1; transform: translateY(-2px); box-shadow: 0 0 16px currentColor; }
+    .band-violet { background: #8859ed; color: #8859ed; } .band-blue { background: #3b93f7; color: #3b93f7; }
+    .band-cyan { background: #36e7ff; color: #36e7ff; } .band-green { background: #5cfa96; color: #5cfa96; }
+    .band-yellow { background: #f8e763; color: #f8e763; } .band-orange { background: #ff9b49; color: #ff9b49; }
+    .band-red { background: #ff596c; color: #ff596c; }
+    .readout { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin-top: 22px; }
+    .readout div { padding: 13px; border-left: 3px solid var(--cyan); background: rgba(255,255,255,.045); border-radius: 0 10px 10px 0; }
+    .readout strong { display: block; color: var(--cyan); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 5px; }
+    .readout span { color: var(--text); font-size: .92rem; }
+    .dynamic-explanation { margin: 17px 0 0; color: var(--muted); line-height: 1.56; }
 
-    <script>
-        function calcularResultado() {
-            let acertos = 0;
-            const q1 = document.querySelector('input[name="q1"]:checked');
-            const q2 = document.querySelector('input[name="q2"]:checked');
+    .quiz-shell { border-radius: 28px; padding: 29px; }
+    .quiz-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 25px; }
+    .quiz-top h2 { margin-bottom: 8px; }
+    .quiz-top p { color: var(--muted); margin: 0; }
+    .score-box { min-width: 126px; padding: 14px; border-radius: 15px; text-align: center; background: rgba(55,231,255,.1); border: 1px solid rgba(55,231,255,.25); }
+    .score-box small { display: block; color: var(--muted); margin-bottom: 3px; }
+    .score-box strong { font-size: 1.65rem; color: var(--cyan); }
+    .progress-row { display: flex; align-items: center; justify-content: space-between; gap: 15px; color: var(--muted); font-size: .88rem; margin-bottom: 10px; }
+    .progress-track { height: 8px; overflow: hidden; border-radius: 99px; background: rgba(255,255,255,.1); margin-bottom: 28px; }
+    .progress-bar { height: 100%; width: 20%; border-radius: inherit; background: linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); transition: width .35s; }
+    .question-card { padding: 26px; border-radius: 20px; background: rgba(2,13,33,.53); border: 1px solid rgba(174,234,255,.14); }
+    .question-card h3 { font-size: clamp(1.2rem, 2.4vw, 1.65rem); line-height: 1.28; margin-bottom: 21px; }
+    .answers { display: grid; gap: 10px; }
+    .answer {
+      width: 100%; display: flex; align-items: center; text-align: left; gap: 13px; padding: 14px; cursor: pointer; color: var(--text);
+      border: 1px solid rgba(190,225,255,.2); border-radius: 13px; background: rgba(255,255,255,.04); transition: border-color .2s, transform .2s, background .2s;
+    }
+    .answer:hover:not(:disabled) { border-color: var(--cyan); transform: translateX(4px); background: rgba(55,231,255,.08); }
+    .answer:disabled { cursor: default; }
+    .answer-letter { flex: 0 0 29px; height: 29px; display: grid; place-items: center; border-radius: 50%; color: var(--cyan); border: 1px solid rgba(55,231,255,.4); font-weight: 900; font-size: .82rem; }
+    .answer.correct { border-color: var(--green); background: rgba(109,255,177,.12); }
+    .answer.correct .answer-letter { border-color: var(--green); color: var(--green); }
+    .answer.incorrect { border-color: var(--danger); background: rgba(255,123,139,.11); }
+    .answer.incorrect .answer-letter { border-color: var(--danger); color: var(--danger); }
+    .feedback { min-height: 24px; margin: 19px 0 0; padding: 0; color: var(--muted); line-height: 1.5; }
+    .feedback.show { padding: 13px 15px; border-radius: 11px; background: rgba(255,255,255,.05); }
+    .quiz-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+    .secondary-button {
+      min-height: 45px; padding: 0 16px; cursor: pointer; color: var(--text); border: 1px solid rgba(190,225,255,.25); border-radius: 999px; background: rgba(255,255,255,.05);
+      transition: background .2s, transform .2s;
+    }
+    .secondary-button:hover { transform: translateY(-2px); background: rgba(255,255,255,.11); }
+    .hidden { display: none !important; }
+    .final-result { text-align: center; padding: 20px 0 4px; }
+    .result-orbit { width: 105px; height: 105px; display: grid; place-items: center; margin: 0 auto 20px; border-radius: 50%; border: 2px solid var(--cyan); background: radial-gradient(circle, rgba(55,231,255,.3), rgba(156,124,255,.08)); box-shadow: 0 0 37px rgba(55,231,255,.2); font-size: 2.6rem; }
+    .final-result p { color: var(--muted); line-height: 1.6; }
 
-            if (q1 && q1.value === 'b') acertos++;
-            if (q2 && q2.value === 'c') acertos++;
+    .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .summary-card { padding: 23px; border-radius: 18px; }
+    .summary-index { color: var(--magenta); font-weight: 900; letter-spacing: .12em; font-size: .76rem; }
+    .summary-card h3 { margin: 12px 0 0; line-height: 1.42; font-size: 1.07rem; }
+    .closing-callout { margin-top: 19px; padding: 27px; border-left: 4px solid var(--cyan); border-radius: 0 18px 18px 0; background: linear-gradient(100deg,rgba(55,231,255,.14),rgba(156,124,255,.11),rgba(255,95,210,.1)); }
+    .closing-callout p { max-width: 890px; margin: 0; font-size: clamp(1.18rem, 2.5vw, 1.75rem); line-height: 1.35; font-weight: 800; }
 
-            const resDiv = document.getElementById('resultado');
-            if (!q1 || !q2) {
-                resDiv.innerHTML = "<p style='color: #e74c3c;'>Por favor, responda todas as perguntas!</p>";
-            } else {
-                resDiv.innerHTML = `<p style='color: #2ecc71;'>Você acertou ${acertos} de 2 perguntas!</p>`;
-            }
-        }
-    </script>
-</body>
-</html>
+    footer { padding: 32px 0 39px; color: #9fb4d2; font-size: .83rem; text-align: center; letter-spacing: .12em; text-transform: uppercase; }
+    .reveal { animation: reveal .75s both; }
+    .delay-1 { animation-delay: .12s; } .delay-2 { animation-delay: .24s; }
+
+    @keyframes pulse { 70% { box-shadow: 0 0 0 11px rgba(55,231,255,0); } 100% { box-shadow: 0 0 0 0 rgba(55,231,255,0); } }
+    @keyframes shimmer { to { background-position: 180% 0; } }
+    @keyframes reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .hero { min-height: auto; padding: 65px 0 42px; }
+      .hero-grid, .experiment { grid-template-columns: 1fr; }
+      .hero-art { min-height: 310px; order: -1; }
+      .eye-scene { transform: scale(.82); }
+      .concept-grid { grid-template-columns: repeat(2, 1fr); }
+      .journey { grid-template-columns: repeat(3, 1fr); row-gap: 29px; }
+      .journey::before { display: none; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .content { width: min(100% - 28px, 1140px); }
+      .section { padding: 65px 0; }
+      h1 { font-size: clamp(2.8rem, 16vw, 4.8rem); }
+      .concept-grid, .journey { grid-template-columns: 1fr; }
+      .journey-step { display: grid; grid-template-columns: 64px 1fr; text-align: left; column-gap: 16px; align-items: start; }
+      .step-number { width: 54px; height: 54px; margin: 0; grid-row: span 2; }
+      .journey-step h3 { padding-top: 2px; }
+      .quiz-top { flex-direction: column; }
+      .score-box { width: 100%; text-align: left; }
+      .readout { grid-template-columns: 1fr; }
+      .swatches { grid-template-columns: repeat(2, 1fr); }
+      .quiz-shell, .color-lab, .color-controls, .journey-wrap { padding: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+    }
+  <
